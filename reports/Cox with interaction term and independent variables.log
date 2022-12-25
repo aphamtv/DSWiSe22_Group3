@@ -1,0 +1,131 @@
+Traceback (most recent call last):
+  File "/Users/anhpham/Library/Python/3.9/lib/python/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/anhpham/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/anhpham/Library/Python/3.9/lib/python/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/anhpham/Library/Python/3.9/lib/python/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/Users/anhpham/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/anhpham/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/anhpham/Library/Python/3.9/lib/python/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+%%R
+library(survival)
+library(ggfortify)
+library(dplyr)
+
+data <- filter(filter(read.csv("./cox-parsed.csv"), score_text != "N/A"), end > start) %>%
+        mutate(race_factor = factor(race,
+                                  labels = c("African-American", 
+                                             "Asian",
+                                             "Caucasian", 
+                                             "Hispanic", 
+                                             "Native American",
+                                             "Other"))) %>%
+        within(race_factor <- relevel(race_factor, ref = 3))
+
+grp <- data[!duplicated(data$id),]
+nrow(grp)
+f <- Surv(start, end, event, type="counting") ~ race_factor * decile_score + age_factor + gender_factor +
+                                                 priors_count + crime_factor
+felonies <- c('(F1)','(F2)', '(F3)','(F5)','(F6)','(F7)')
+data_filtered <-  mutate(data, crime_factor = factor(ifelse(c_charge_degree %in% felonies, 'F', 'M'))) %>%
+                  mutate(age_factor = as.factor(age_cat)) %>%
+                  within(age_factor <- relevel(age_factor, ref = 1)) %>%
+                  mutate(gender_factor = factor(sex, labels= c("Female","Male"))) %>%
+                  within(gender_factor <- relevel(gender_factor, ref = 2)) %>%
+                  filter(days_b_screening_arrest <= 30) %>%
+                  filter(days_b_screening_arrest >= -30) %>%
+                  filter(is_recid != -1)
+grp <- data_filtered[!duplicated(data_filtered$id),]
+print(nrow(grp))
+model <- coxph(f, data=data_filtered)
+print(summary(model))
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mRRuntimeError[0m                             Traceback (most recent call last)
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/rpy2/ipython/rmagic.py:331[0m, in [0;36mRMagics.eval[0;34m(self, code)[0m
+[1;32m    329[0m [38;5;28;01mtry[39;00m:
+[1;32m    330[0m     [38;5;66;03m# Need the newline in case the last line in code is a comment.[39;00m
+[0;32m--> 331[0m     value, visible [38;5;241m=[39m [43mro[49m[38;5;241;43m.[39;49m[43mr[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mwithVisible([39;49m[38;5;124;43m{[39;49m[38;5;132;43;01m%s[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m})[39;49m[38;5;124;43m"[39;49m[43m [49m[38;5;241;43m%[39;49m[43m [49m[43mcode[49m[43m)[49m
+[1;32m    332[0m [38;5;28;01mexcept[39;00m (ri[38;5;241m.[39membedded[38;5;241m.[39mRRuntimeError, [38;5;167;01mValueError[39;00m) [38;5;28;01mas[39;00m exception:
+[1;32m    333[0m     [38;5;66;03m# Otherwise next return seems to have copy of error.[39;00m
+
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/rpy2/robjects/__init__.py:459[0m, in [0;36mR.__call__[0;34m(self, string)[0m
+[1;32m    458[0m p [38;5;241m=[39m rinterface[38;5;241m.[39mparse(string)
+[0;32m--> 459[0m res [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43meval[49m[43m([49m[43mp[49m[43m)[49m
+[1;32m    460[0m [38;5;28;01mreturn[39;00m conversion[38;5;241m.[39mget_conversion()[38;5;241m.[39mrpy2py(res)
+
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/rpy2/robjects/functions.py:204[0m, in [0;36mSignatureTranslatedFunction.__call__[0;34m(self, *args, **kwargs)[0m
+[1;32m    203[0m         kwargs[r_k] [38;5;241m=[39m v
+[0;32m--> 204[0m [38;5;28;01mreturn[39;00m ([38;5;28;43msuper[39;49m[43m([49m[43mSignatureTranslatedFunction[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m)[49m
+[1;32m    205[0m [43m        [49m[38;5;241;43m.[39;49m[38;5;21;43m__call__[39;49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m)
+
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/rpy2/robjects/functions.py:127[0m, in [0;36mFunction.__call__[0;34m(self, *args, **kwargs)[0m
+[1;32m    126[0m         new_kwargs[k] [38;5;241m=[39m cv[38;5;241m.[39mpy2rpy(v)
+[0;32m--> 127[0m res [38;5;241m=[39m [38;5;28;43msuper[39;49m[43m([49m[43mFunction[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m)[49m[38;5;241;43m.[39;49m[38;5;21;43m__call__[39;49m[43m([49m[38;5;241;43m*[39;49m[43mnew_args[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mnew_kwargs[49m[43m)[49m
+[1;32m    128[0m res [38;5;241m=[39m cv[38;5;241m.[39mrpy2py(res)
+
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/rpy2/rinterface_lib/conversion.py:45[0m, in [0;36m_cdata_res_to_rinterface.<locals>._[0;34m(*args, **kwargs)[0m
+[1;32m     44[0m [38;5;28;01mdef[39;00m [38;5;21m_[39m([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[0;32m---> 45[0m     cdata [38;5;241m=[39m [43mfunction[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m     46[0m     [38;5;66;03m# TODO: test cdata is of the expected CType[39;00m
+
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/rpy2/rinterface.py:815[0m, in [0;36mSexpClosure.__call__[0;34m(self, *args, **kwargs)[0m
+[1;32m    814[0m     [38;5;28;01mif[39;00m error_occured[[38;5;241m0[39m]:
+[0;32m--> 815[0m         [38;5;28;01mraise[39;00m embedded[38;5;241m.[39mRRuntimeError(_rinterface[38;5;241m.[39m_geterrmessage())
+[1;32m    816[0m [38;5;28;01mreturn[39;00m res
+
+[0;31mRRuntimeError[0m: Erreur dans library(ggfortify) : 
+  aucun package nommé ‘ggfortify’ n'est trouvé
+
+
+During handling of the above exception, another exception occurred:
+
+[0;31mRInterpreterError[0m                         Traceback (most recent call last)
+Cell [0;32mIn [2], line 1[0m
+[0;32m----> 1[0m get_ipython()[38;5;241m.[39mrun_cell_magic([38;5;124m'[39m[38;5;124mR[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mlibrary(survival)[39m[38;5;130;01m\n[39;00m[38;5;124mlibrary(ggfortify)[39m[38;5;130;01m\n[39;00m[38;5;124mlibrary(dplyr)[39m[38;5;130;01m\n[39;00m[38;5;130;01m\n[39;00m[38;5;124mdata <- filter(filter(read.csv([39m[38;5;124m"[39m[38;5;124m./cox-parsed.csv[39m[38;5;124m"[39m[38;5;124m), score_text != [39m[38;5;124m"[39m[38;5;124mN/A[39m[38;5;124m"[39m[38;5;124m), end > start) [39m[38;5;124m%[39m[38;5;124m>[39m[38;5;124m%[39m[38;5;130;01m\n[39;00m[38;5;124m        mutate(race_factor = factor(race,[39m[38;5;130;01m\n[39;00m[38;5;124m                                  labels = c([39m[38;5;124m"[39m[38;5;124mAfrican-American[39m[38;5;124m"[39m[38;5;124m, [39m[38;5;130;01m\n[39;00m[38;5;124m                                             [39m[38;5;124m"[39m[38;5;124mAsian[39m[38;5;124m"[39m[38;5;124m,[39m[38;5;130;01m\n[39;00m[38;5;124m                                             [39m[38;5;124m"[39m[38;5;124mCaucasian[39m[38;5;124m"[39m[38;5;124m, [39m[38;5;130;01m\n[39;00m[38;5;124m                                             [39m[38;5;124m"[39m[38;5;124mHispanic[39m[38;5;124m"[39m[38;5;124m, [39m[38;5;130;01m\n[39;00m[38;5;124m                                             [39m[38;5;124m"[39m[38;5;124mNative American[39m[38;5;124m"[39m[38;5;124m,[39m[38;5;130;01m\n[39;00m[38;5;124m                                             [39m[38;5;124m"[39m[38;5;124mOther[39m[38;5;124m"[39m[38;5;124m))) [39m[38;5;124m%[39m[38;5;124m>[39m[38;5;124m%[39m[38;5;130;01m\n[39;00m[38;5;124m        within(race_factor <- relevel(race_factor, ref = 3))[39m[38;5;130;01m\n[39;00m[38;5;130;01m\n[39;00m[38;5;124mgrp <- data[!duplicated(data$id),][39m[38;5;130;01m\n[39;00m[38;5;124mnrow(grp)[39m[38;5;130;01m\n[39;00m[38;5;124mf <- Surv(start, end, event, type=[39m[38;5;124m"[39m[38;5;124mcounting[39m[38;5;124m"[39m[38;5;124m) ~ race_factor * decile_score + age_factor + gender_factor +[39m[38;5;130;01m\n[39;00m[38;5;124m                                                 priors_count + crime_factor[39m[38;5;130;01m\n[39;00m[38;5;124mfelonies <- c([39m[38;5;130;01m\'[39;00m[38;5;124m(F1)[39m[38;5;130;01m\'[39;00m[38;5;124m,[39m[38;5;130;01m\'[39;00m[38;5;124m(F2)[39m[38;5;130;01m\'[39;00m[38;5;124m, [39m[38;5;130;01m\'[39;00m[38;5;124m(F3)[39m[38;5;130;01m\'[39;00m[38;5;124m,[39m[38;5;130;01m\'[39;00m[38;5;124m(F5)[39m[38;5;130;01m\'[39;00m[38;5;124m,[39m[38;5;130;01m\'[39;00m[38;5;124m(F6)[39m[38;5;130;01m\'[39;00m[38;5;124m,[39m[38;5;130;01m\'[39;00m[38;5;124m(F7)[39m[38;5;130;01m\'[39;00m[38;5;124m)[39m[38;5;130;01m\n[39;00m[38;5;124mdata_filtered <-  mutate(data, crime_factor = factor(ifelse(c_charge_degree [39m[38;5;132;01m%i[39;00m[38;5;124mn[39m[38;5;132;01m% f[39;00m[38;5;124melonies, [39m[38;5;130;01m\'[39;00m[38;5;124mF[39m[38;5;130;01m\'[39;00m[38;5;124m, [39m[38;5;130;01m\'[39;00m[38;5;124mM[39m[38;5;130;01m\'[39;00m[38;5;124m))) [39m[38;5;124m%[39m[38;5;124m>[39m[38;5;124m%[39m[38;5;130;01m\n[39;00m[38;5;124m                  mutate(age_factor = as.factor(age_cat)) [39m[38;5;124m%[39m[38;5;124m>[39m[38;5;124m%[39m[38;5;130;01m\n[39;00m[38;5;124m                  within(age_factor <- relevel(age_factor, ref = 1)) [39m[38;5;124m%[39m[38;5;124m>[39m[38;5;124m%[39m[38;5;130;01m\n[39;00m[38;5;124m                  mutate(gender_factor = factor(sex, labels= c([39m[38;5;124m"[39m[38;5;124mFemale[39m[38;5;124m"[39m[38;5;124m,[39m[38;5;124m"[39m[38;5;124mMale[39m[38;5;124m"[39m[38;5;124m))) [39m[38;5;124m%[39m[38;5;124m>[39m[38;5;124m%[39m[38;5;130;01m\n[39;00m[38;5;124m                  within(gender_factor <- relevel(gender_factor, ref = 2)) [39m[38;5;124m%[39m[38;5;124m>[39m[38;5;124m%[39m[38;5;130;01m\n[39;00m[38;5;124m                  filter(days_b_screening_arrest <= 30) [39m[38;5;124m%[39m[38;5;124m>[39m[38;5;124m%[39m[38;5;130;01m\n[39;00m[38;5;124m                  filter(days_b_screening_arrest >= -30) [39m[38;5;124m%[39m[38;5;124m>[39m[38;5;124m%[39m[38;5;130;01m\n[39;00m[38;5;124m                  filter(is_recid != -1)[39m[38;5;130;01m\n[39;00m[38;5;124mgrp <- data_filtered[!duplicated(data_filtered$id),][39m[38;5;130;01m\n[39;00m[38;5;124mprint(nrow(grp))[39m[38;5;130;01m\n[39;00m[38;5;124mmodel <- coxph(f, data=data_filtered)[39m[38;5;130;01m\n[39;00m[38;5;124mprint(summary(model))[39m[38;5;130;01m\n[39;00m[38;5;124m'[39m)
+
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/IPython/core/interactiveshell.py:2362[0m, in [0;36mInteractiveShell.run_cell_magic[0;34m(self, magic_name, line, cell)[0m
+[1;32m   2360[0m [38;5;28;01mwith[39;00m [38;5;28mself[39m[38;5;241m.[39mbuiltin_trap:
+[1;32m   2361[0m     args [38;5;241m=[39m (magic_arg_s, cell)
+[0;32m-> 2362[0m     result [38;5;241m=[39m [43mfn[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m   2363[0m [38;5;28;01mreturn[39;00m result
+
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/rpy2/ipython/rmagic.py:868[0m, in [0;36mRMagics.R[0;34m(self, line, cell, local_ns)[0m
+[1;32m    866[0m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m e[38;5;241m.[39mstdout[38;5;241m.[39mendswith(e[38;5;241m.[39merr):
+[1;32m    867[0m         [38;5;28mprint[39m(e[38;5;241m.[39merr)
+[0;32m--> 868[0m     [38;5;28;01mraise[39;00m e
+[1;32m    869[0m [38;5;28;01mfinally[39;00m:
+[1;32m    870[0m     [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mdevice [38;5;129;01min[39;00m [[38;5;124m'[39m[38;5;124mpng[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124msvg[39m[38;5;124m'[39m]:
+
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/rpy2/ipython/rmagic.py:848[0m, in [0;36mRMagics.R[0;34m(self, line, cell, local_ns)[0m
+[1;32m    846[0m         return_output [38;5;241m=[39m [38;5;28;01mFalse[39;00m
+[1;32m    847[0m [38;5;28;01melse[39;00m:
+[0;32m--> 848[0m     text_result, result, visible [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43meval[49m[43m([49m[43mcode[49m[43m)[49m
+[1;32m    849[0m     text_output [38;5;241m+[39m[38;5;241m=[39m text_result
+[1;32m    850[0m     [38;5;28;01mif[39;00m visible:
+
+File [0;32m~/Library/Python/3.9/lib/python/site-packages/rpy2/ipython/rmagic.py:335[0m, in [0;36mRMagics.eval[0;34m(self, code)[0m
+[1;32m    332[0m [38;5;28;01mexcept[39;00m (ri[38;5;241m.[39membedded[38;5;241m.[39mRRuntimeError, [38;5;167;01mValueError[39;00m) [38;5;28;01mas[39;00m exception:
+[1;32m    333[0m     [38;5;66;03m# Otherwise next return seems to have copy of error.[39;00m
+[1;32m    334[0m     warning_or_other_msg [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mflush()
+[0;32m--> 335[0m     [38;5;28;01mraise[39;00m RInterpreterError(code, [38;5;28mstr[39m(exception),
+[1;32m    336[0m                             warning_or_other_msg)
+[1;32m    337[0m text_output [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mflush()
+[1;32m    338[0m [38;5;28;01mreturn[39;00m text_output, value, visible[[38;5;241m0[39m]
+
+[0;31mRInterpreterError[0m: Failed to parse and evaluate line 'library(survival)\nlibrary(ggfortify)\nlibrary(dplyr)\n\ndata <- filter(filter(read.csv("./cox-parsed.csv"), score_text != "N/A"), end > start) %>%\n        mutate(race_factor = factor(race,\n                                  labels = c("African-American", \n                                             "Asian",\n                                             "Caucasian", \n                                             "Hispanic", \n                                             "Native American",\n                                             "Other"))) %>%\n        within(race_factor <- relevel(race_factor, ref = 3))\n\ngrp <- data[!duplicated(data$id),]\nnrow(grp)\nf <- Surv(start, end, event, type="counting") ~ race_factor * decile_score + age_factor + gender_factor +\n                                                 priors_count + crime_factor\nfelonies <- c(\'(F1)\',\'(F2)\', \'(F3)\',\'(F5)\',\'(F6)\',\'(F7)\')\ndata_filtered <-  mutate(data, crime_factor = factor(ifelse(c_charge_degree %in% felonies, \'F\', \'M\'))) %>%\n                  mutate(age_factor = as.factor(age_cat)) %>%\n                  within(age_factor <- relevel(age_factor, ref = 1)) %>%\n                  mutate(gender_factor = factor(sex, labels= c("Female","Male"))) %>%\n                  within(gender_factor <- relevel(gender_factor, ref = 2)) %>%\n                  filter(days_b_screening_arrest <= 30) %>%\n                  filter(days_b_screening_arrest >= -30) %>%\n                  filter(is_recid != -1)\ngrp <- data_filtered[!duplicated(data_filtered$id),]\nprint(nrow(grp))\nmodel <- coxph(f, data=data_filtered)\nprint(summary(model))\n'.
+R error message: "Erreur dans library(ggfortify) : \n  aucun package nommé ‘ggfortify’ n'est trouvé"
+RInterpreterError: Failed to parse and evaluate line 'library(survival)\nlibrary(ggfortify)\nlibrary(dplyr)\n\ndata <- filter(filter(read.csv("./cox-parsed.csv"), score_text != "N/A"), end > start) %>%\n        mutate(race_factor = factor(race,\n                                  labels = c("African-American", \n                                             "Asian",\n                                             "Caucasian", \n                                             "Hispanic", \n                                             "Native American",\n                                             "Other"))) %>%\n        within(race_factor <- relevel(race_factor, ref = 3))\n\ngrp <- data[!duplicated(data$id),]\nnrow(grp)\nf <- Surv(start, end, event, type="counting") ~ race_factor * decile_score + age_factor + gender_factor +\n                                                 priors_count + crime_factor\nfelonies <- c(\'(F1)\',\'(F2)\', \'(F3)\',\'(F5)\',\'(F6)\',\'(F7)\')\ndata_filtered <-  mutate(data, crime_factor = factor(ifelse(c_charge_degree %in% felonies, \'F\', \'M\'))) %>%\n                  mutate(age_factor = as.factor(age_cat)) %>%\n                  within(age_factor <- relevel(age_factor, ref = 1)) %>%\n                  mutate(gender_factor = factor(sex, labels= c("Female","Male"))) %>%\n                  within(gender_factor <- relevel(gender_factor, ref = 2)) %>%\n                  filter(days_b_screening_arrest <= 30) %>%\n                  filter(days_b_screening_arrest >= -30) %>%\n                  filter(is_recid != -1)\ngrp <- data_filtered[!duplicated(data_filtered$id),]\nprint(nrow(grp))\nmodel <- coxph(f, data=data_filtered)\nprint(summary(model))\n'.
+R error message: "Erreur dans library(ggfortify) : \n  aucun package nommé ‘ggfortify’ n'est trouvé"
+

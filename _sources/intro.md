@@ -1,11 +1,8 @@
-# Welcome to your Jupyter Book
+# Are the COMPAS risk scales racially biased against blacks?
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+The use of risk assessment tools in the criminal justice system has gained widespread adoption in recent years, with the goal of improving public safety and reducing recidivism. One of the most widely used risk assessment tools is the COMPAS (Correctional Offender Management Profiling for Alternative Sanctions) algorithm, which is designed to predict the likelihood of an individual committing a crime in the future. However, there have been concerns raised about the potential for bias in the COMPAS algorithm, specifically with regard to its impact on Black individuals.
 
-Check out the content pages bundled with this sample book to see more.
+This report aims to examine the question of whether the COMPAS risk scales are racially biased against Blacks. To do so, we will review relevant research on the topic and consider the potential sources of bias in the COMPAS algorithm and its use in the criminal justice system. We will also examine..................
 
 ```{tableofcontents}
 ```
