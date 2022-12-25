@@ -1,0 +1,25 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+# chapters:
+# - file: notebooks
+# - file: introduction
+
+# format: jb-book
+# root: index
+parts:
+  - caption: Background
+    chapters:
+    - file: compas
+    - file: critisms
+  - caption: Analysis of COMPAS fairness
+    chapters:
+    - file: notebooks
+  - caption: Acknowledgements
+    chapters:
+    - file: references
+  - caption: About us
+    chapters:
+    - file: team
