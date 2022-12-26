@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>COMPAS Analysis &#8212; DSWiSe2022 Group 3 Project</title>
+    <title>COMPAS Racial Bias Analysis &#8212; DSWiSe2022 Group 3 Project</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -138,7 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   COMPAS Analysis
+   COMPAS Racial Bias Analysis
   </a>
  </li>
 </ul>
@@ -304,23 +304,186 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-packages">
+   Import Packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prepare-data">
+   Prepare Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-description">
+     Data Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-cleaning">
+     Data Cleaning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compas-score-and-recidivism">
+   COMPAS Score and Recidivism
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exploratory-analysis">
+     Exploratory Analysis
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#score-and-race">
+       Score and Race
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#distribution-of-decile-scores">
+       Distribution of decile scores
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compas-score-prediction">
+     COMPAS Score Prediction
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#linear-regression-model">
+       Linear Regression Model
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lasso">
+     Lasso
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ridge">
+     Ridge
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>COMPAS Analysis</h1>
+                <h1>COMPAS Racial Bias Analysis</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-packages">
+   Import Packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prepare-data">
+   Prepare Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-description">
+     Data Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-cleaning">
+     Data Cleaning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compas-score-and-recidivism">
+   COMPAS Score and Recidivism
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exploratory-analysis">
+     Exploratory Analysis
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#score-and-race">
+       Score and Race
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#distribution-of-decile-scores">
+       Distribution of decile scores
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compas-score-prediction">
+     COMPAS Score Prediction
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#linear-regression-model">
+       Linear Regression Model
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lasso">
+     Lasso
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ridge">
+     Ridge
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -328,35 +491,266 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="compas-analysis">
-<h1>COMPAS Analysis<a class="headerlink" href="#compas-analysis" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="compas-racial-bias-analysis">
+<h1>COMPAS Racial Bias Analysis<a class="headerlink" href="#compas-racial-bias-analysis" title="Permalink to this headline">#</a></h1>
+<section id="import-packages">
+<h2>Import Packages<a class="headerlink" href="#import-packages" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">matplt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">linear_model</span><span class="p">,</span> <span class="n">metrics</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">,</span> <span class="n">preprocessing</span><span class="p">,</span> <span class="n">model_selection</span>
+<span class="p">)</span>
+<span class="c1"># from sklearn.model_selection import cross_val_score</span>
+<span class="c1"># from sklearn.model_selection import RepeatedKFold</span>
+<span class="c1"># from sklearn.linear_model import Lasso</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="prepare-data">
+<h2>Prepare Data<a class="headerlink" href="#prepare-data" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./data/compas-scores-two-years.csv&quot;</span><span class="p">)</span>
-<span class="nb">len</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raw_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">raw_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7214
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(7214, 53)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>name</th>
+      <th>first</th>
+      <th>last</th>
+      <th>compas_screening_date</th>
+      <th>sex</th>
+      <th>dob</th>
+      <th>age</th>
+      <th>age_cat</th>
+      <th>race</th>
+      <th>...</th>
+      <th>v_decile_score</th>
+      <th>v_score_text</th>
+      <th>v_screening_date</th>
+      <th>in_custody</th>
+      <th>out_custody</th>
+      <th>priors_count.1</th>
+      <th>start</th>
+      <th>end</th>
+      <th>event</th>
+      <th>two_year_recid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>miguel hernandez</td>
+      <td>miguel</td>
+      <td>hernandez</td>
+      <td>2013-08-14</td>
+      <td>Male</td>
+      <td>1947-04-18</td>
+      <td>69</td>
+      <td>Greater than 45</td>
+      <td>Other</td>
+      <td>...</td>
+      <td>1</td>
+      <td>Low</td>
+      <td>2013-08-14</td>
+      <td>2014-07-07</td>
+      <td>2014-07-14</td>
+      <td>0</td>
+      <td>0</td>
+      <td>327</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>kevon dixon</td>
+      <td>kevon</td>
+      <td>dixon</td>
+      <td>2013-01-27</td>
+      <td>Male</td>
+      <td>1982-01-22</td>
+      <td>34</td>
+      <td>25 - 45</td>
+      <td>African-American</td>
+      <td>...</td>
+      <td>1</td>
+      <td>Low</td>
+      <td>2013-01-27</td>
+      <td>2013-01-26</td>
+      <td>2013-02-05</td>
+      <td>0</td>
+      <td>9</td>
+      <td>159</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>ed philo</td>
+      <td>ed</td>
+      <td>philo</td>
+      <td>2013-04-14</td>
+      <td>Male</td>
+      <td>1991-05-14</td>
+      <td>24</td>
+      <td>Less than 25</td>
+      <td>African-American</td>
+      <td>...</td>
+      <td>3</td>
+      <td>Low</td>
+      <td>2013-04-14</td>
+      <td>2013-06-16</td>
+      <td>2013-06-16</td>
+      <td>4</td>
+      <td>0</td>
+      <td>63</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>marcu brown</td>
+      <td>marcu</td>
+      <td>brown</td>
+      <td>2013-01-13</td>
+      <td>Male</td>
+      <td>1993-01-21</td>
+      <td>23</td>
+      <td>Less than 25</td>
+      <td>African-American</td>
+      <td>...</td>
+      <td>6</td>
+      <td>Medium</td>
+      <td>2013-01-13</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1174</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6</td>
+      <td>bouthy pierrelouis</td>
+      <td>bouthy</td>
+      <td>pierrelouis</td>
+      <td>2013-03-26</td>
+      <td>Male</td>
+      <td>1973-01-22</td>
+      <td>43</td>
+      <td>25 - 45</td>
+      <td>Other</td>
+      <td>...</td>
+      <td>1</td>
+      <td>Low</td>
+      <td>2013-03-26</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1102</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 53 columns</p>
+</div></div></div>
+</div>
+<section id="data-description">
+<h3>Data Description<a class="headerlink" href="#data-description" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>age: Age of the defendant. It is numeric.</p></li>
+<li><p>age_cat: Category of Age. It can be &lt; 25, 25-45, &gt;45.</p></li>
+<li><p>sex: Sex of the defendant. It is either ‘Male’ or ‘Female’</p></li>
+<li><p>race: Race of the defendant. It can be ‘African-American’, ‘Caucasian’, ‘Hispanic’, ‘Asian’, or ‘Other’.</p></li>
+<li><p>c_charge_degree: Degree of the crime. It is either M (Misdemeanor), F (Felony), or O (not causing jail time).</p></li>
+<li><p>priors_count: Count of prior crimes committed by the defendant. It is numeric.</p></li>
+<li><p>days_b_screening_arrest: Days between the arrest and COMPAS screening.</p></li>
+<li><p>decile_score: The COMPAS score predicted by the system. It is between 0-10.</p></li>
+<li><p>score_text: Category of decile score. It can be Low (1-4), Medium (5-7), and High (8-10).</p></li>
+<li><p>is_recid: A variable to indicate if recidivism was done by the defendant. It can be 0, 1, -1.</p></li>
+<li><p>two_year_recid: A variable to indicate if recidivism was done by the defendant within two years.</p></li>
+<li><p>c_jail_in: Time when the defendant was jailed.</p></li>
+<li><p>c_jail_out: Time when the defendant was released from the jail.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">race</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">criminal</span> <span class="n">history</span> <span class="p">(</span><span class="n">priors_count</span><span class="p">),</span> <span class="n">charge</span> <span class="n">degree</span><span class="p">,</span> <span class="n">gender</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">race</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">criminal</span> <span class="n">history</span> <span class="p">(</span><span class="n">priors_count</span><span class="p">),</span> <span class="n">charge</span> <span class="n">degree</span><span class="p">,</span> <span class="n">gender</span>
+                                                                     <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># filter data</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># raw_data.isna().sum()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-cleaning">
+<h3>Data Cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this headline">#</a></h3>
+<p>However not all of the rows are useable for the first round of analysis.</p>
+<p>There are a number of reasons remove rows because of missing data:</p>
+<ul class="simple">
+<li><p>If the charge date of a defendants Compas scored crime was not within 30 days from when the person was arrested, we assume that because of data quality reasons, that we do not have the right offense.</p></li>
+<li><p>We coded the recidivist flag – <code class="docutils literal notranslate"><span class="pre">is_recid</span></code> – to be -1 if we could not find a compas case at all.</p></li>
+<li><p>In a similar vein, ordinary traffic offenses – those with a <code class="docutils literal notranslate"><span class="pre">c_charge_degree</span></code> of ‘O’ – will not result in Jail time are removed (only two of them).</p></li>
+<li><p>We filtered the underlying data from Broward county to include only those rows representing people who had either recidivated in two years, or had at least two years outside of a correctional facility.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
     <span class="p">(</span><span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;days_b_screening_arrest&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">)</span> <span class="o">&amp;</span>
     <span class="p">(</span><span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;days_b_screening_arrest&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">30</span><span class="p">)</span> <span class="o">&amp;</span>
     <span class="p">(</span><span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;is_recid&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span>
@@ -373,43 +767,15 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># add &quot;length of stay&quot; column = date out - date in</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;length_of_stay&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;c_jail_out&#39;</span><span class="p">])</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;c_jail_in&#39;</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#calculate the corr btw &quot;length of stay&quot; and &quot;decile score&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;length_of_stay&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;decile_score&#39;</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.20741201943031598
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># demographic breakdown</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;age_cat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25 - 45            3532
-Less than 25       1347
-Greater than 45    1293
-Name: age_cat, dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
+</section>
+</section>
+<section id="compas-score-and-recidivism">
+<h2>COMPAS Score and Recidivism<a class="headerlink" href="#compas-score-and-recidivism" title="Permalink to this headline">#</a></h2>
+<p>We visualize the data to see how scores and race correlate to each other</p>
+<section id="exploratory-analysis">
+<h3>Exploratory Analysis<a class="headerlink" href="#exploratory-analysis" title="Permalink to this headline">#</a></h3>
+<section id="score-and-race">
+<h4>Score and Race<a class="headerlink" href="#score-and-race" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -428,6 +794,341 @@ Name: race, dtype: int64
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Race by Score Text</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;score_text&#39;</span><span class="p">],</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>race</th>
+      <th>African-American</th>
+      <th>Caucasian</th>
+      <th>Hispanic</th>
+    </tr>
+    <tr>
+      <th>score_text</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>High</th>
+      <td>845</td>
+      <td>223</td>
+      <td>47</td>
+    </tr>
+    <tr>
+      <th>Low</th>
+      <td>1346</td>
+      <td>1407</td>
+      <td>368</td>
+    </tr>
+    <tr>
+      <th>Medium</th>
+      <td>984</td>
+      <td>473</td>
+      <td>94</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_text_by_race</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;race&#39;</span><span class="p">,</span><span class="s1">&#39;score_text&#39;</span><span class="p">],</span> <span class="n">sort</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="n">score_text_by_race</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;barh&quot;</span><span class="p">,</span> 
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Score Text by Race&quot;</span><span class="p">,</span>
+    <span class="n">ylabel</span> <span class="o">=</span> <span class="s2">&quot;Score Text&quot;</span><span class="p">,</span>
+    <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;Race&quot;</span><span class="p">,</span>
+    <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
+    <span class="n">stacked</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Score Text by Race&#39;}, xlabel=&#39;Race&#39;, ylabel=&#39;Score Text&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/notebooks_16_1.png" src="_images/notebooks_16_1.png" />
+</div>
+</div>
+<p>African American group has the highest number of High Scores individuals. However, they are also the biggest group, so we need to consider the proportions of score text in each Race group. Since we have significantly more samples for African-American, Caucasian and Hispanic, we will focus on these three groups only.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;African-American&quot;</span><span class="p">,</span><span class="s2">&quot;Caucasian&quot;</span><span class="p">,</span><span class="s2">&quot;Hispanic&quot;</span><span class="p">])]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#calculate the total and proportions of score texts in each race group</span>
+<span class="n">score_text_by_race_prop</span><span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;race&#39;</span><span class="p">,</span> <span class="s1">&#39;score_text&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;score_text&#39;</span><span class="p">:</span> <span class="s1">&#39;count&#39;</span><span class="p">})</span>
+<span class="n">score_text_by_race_prop</span><span class="p">[</span><span class="s1">&#39;prop&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">score_text_by_race_prop</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="mi">100</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span>
+<span class="n">score_text_by_race_prop</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>score_text</th>
+      <th>prop</th>
+    </tr>
+    <tr>
+      <th>race</th>
+      <th>score_text</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">African-American</th>
+      <th>High</th>
+      <td>845</td>
+      <td>26.614173</td>
+    </tr>
+    <tr>
+      <th>Low</th>
+      <td>1346</td>
+      <td>42.393701</td>
+    </tr>
+    <tr>
+      <th>Medium</th>
+      <td>984</td>
+      <td>30.992126</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">Caucasian</th>
+      <th>High</th>
+      <td>223</td>
+      <td>10.603899</td>
+    </tr>
+    <tr>
+      <th>Low</th>
+      <td>1407</td>
+      <td>66.904422</td>
+    </tr>
+    <tr>
+      <th>Medium</th>
+      <td>473</td>
+      <td>22.491679</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">Hispanic</th>
+      <th>High</th>
+      <td>47</td>
+      <td>9.233792</td>
+    </tr>
+    <tr>
+      <th>Low</th>
+      <td>368</td>
+      <td>72.298625</td>
+    </tr>
+    <tr>
+      <th>Medium</th>
+      <td>94</td>
+      <td>18.467583</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;race&#39;</span><span class="p">)[</span><span class="s1">&#39;decile_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>race
+African-American    5.276850
+Caucasian           3.635283
+Hispanic            3.383104
+Name: decile_score, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>26,6% of African-American defendants are classified with High Scores compared to 10.6% of Caucasian group</p>
+</section>
+<section id="distribution-of-decile-scores">
+<h4>Distribution of decile scores<a class="headerlink" href="#distribution-of-decile-scores" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;decile_score&#39;</span><span class="p">,</span>
+    <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;race&#39;</span><span class="p">,</span>
+    <span class="n">palette</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#F97306&quot;</span><span class="p">,</span><span class="s2">&quot;#0343DF&quot;</span><span class="p">,</span><span class="s2">&quot;#00FF00&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribution of Decile Scores by Race&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Decile Score&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Count&#39;)
+</pre></div>
+</div>
+<img alt="_images/notebooks_23_1.png" src="_images/notebooks_23_1.png" />
+</div>
+</div>
+<p>There is a clear downtrend in Decile Score for Caucasian and Hispanic; however, no downtrend for African-American.</p>
+</section>
+</section>
+<section id="compas-score-prediction">
+<h3>COMPAS Score Prediction<a class="headerlink" href="#compas-score-prediction" title="Permalink to this headline">#</a></h3>
+<section id="linear-regression-model">
+<h4>Linear Regression Model<a class="headerlink" href="#linear-regression-model" title="Permalink to this headline">#</a></h4>
+<p>features:</p>
+<ul class="simple">
+<li><p>race</p></li>
+<li><p>age group (age_cat)</p></li>
+<li><p>criminal history (priors_count)</p></li>
+<li><p>Felony or Misdemeanor charge (charge degree)</p></li>
+<li><p>sex</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">age_cat</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;age&#39;</span><span class="p">),</span>
+     <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sex</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;sex&#39;</span><span class="p">),</span>
+     <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">c_charge_degree</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;degree&#39;</span><span class="p">),</span> <span class="c1"># felony or misdemeanor charge (&#39;f&#39; or &#39;m&#39;)</span>
+     <span class="n">df</span><span class="o">.</span><span class="n">priors_count</span><span class="p">],</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># drop one less dummy variable</span>
+<span class="n">features</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;age_25 - 45&#39;</span><span class="p">,</span> <span class="s1">&#39;sex_Female&#39;</span><span class="p">,</span> <span class="s1">&#39;degree_M&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># predict the Decile Score</span>
+<span class="n">target</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">decile_score</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="lasso">
+<h3>Lasso<a class="headerlink" href="#lasso" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">model_selection</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alphas</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span><span class="o">*</span><span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lasso Model</span>
+<span class="c1"># find the best alpha</span>
+<span class="n">lasso_cv</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LassoCV</span><span class="p">(</span><span class="n">alphas</span> <span class="o">=</span> <span class="n">alphas</span><span class="p">,</span> <span class="n">cv</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">max_iter</span> <span class="o">=</span> <span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">lasso_cv</span><span class="o">.</span><span class="n">alpha_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.005
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lasso_model</span> <span class="o">=</span> <span class="n">Lasso</span><span class="p">()</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">lasso_cv</span><span class="o">.</span><span class="n">alpha_</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_pred</span><span class="o">=</span> <span class="n">lasso_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.259341551719152
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lasso_cv_model</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">RidgeCV</span><span class="p">(</span><span class="n">alphas</span> <span class="o">=</span> <span class="n">alphas</span><span class="p">,</span> <span class="n">scoring</span> <span class="o">=</span> <span class="s1">&#39;neg_mean_squared_error&#39;</span><span class="p">,</span> <span class="n">normalize</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">lasso_cv_model</span><span class="o">.</span><span class="n">alpha_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.005
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ridge">
+<h3>Ridge<a class="headerlink" href="#ridge" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ridge_model</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">lasso_cv_model</span><span class="o">.</span><span class="n">alpha_</span><span class="p">,</span> <span class="n">normalize</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">metrics</span><span class="o">.</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">ridge_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.100613454127368
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
