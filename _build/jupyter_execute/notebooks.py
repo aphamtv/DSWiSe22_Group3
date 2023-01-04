@@ -32,7 +32,8 @@ warnings.filterwarnings('ignore')
 
 raw_data = pd.read_csv("./data/compas-scores-two-years.csv")
 print(raw_data.shape)
-raw_data.head()
+raw_data.columns
+# raw_data.head()
 
 
 # ### Data Description
