@@ -1,0 +1,726 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; DSWiSe2022 Group 3 Project</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">DSWiSe2022 Group 3 Project</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Are the COMPAS risk scales racially biased against blacks?
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Background
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../compas.html">
+   COMPAS Algorithm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../critisms.html">
+   COMPAS Critisms
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Analysis of COMPAS fairness
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks.html">
+   COMPAS Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Acknowledgements
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   References
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About us
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../team.html">
+   Team Members
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/data/Cox with interaction term and independent variables.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/data/Cox with interaction term and independent variables.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><no title></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># filter dplyr warnings</span>
+<span class="o">%</span><span class="k">load_ext</span> rpy2.ipython
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h2 id="cox">Cox with interaction term</h2><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+library(survival)
+library(ggfortify)
+library(dplyr)
+
+data &lt;- filter(filter(read.csv(&quot;./cox-parsed.csv&quot;), score_text != &quot;N/A&quot;), end &gt; start) %&gt;%
+        mutate(race_factor = factor(race,
+                                  labels = c(&quot;African-American&quot;, 
+                                             &quot;Asian&quot;,
+                                             &quot;Caucasian&quot;, 
+                                             &quot;Hispanic&quot;, 
+                                             &quot;Native American&quot;,
+                                             &quot;Other&quot;))) %&gt;%
+        within(race_factor &lt;- relevel(race_factor, ref = 3))
+
+grp &lt;- data[!duplicated(data$id),]
+nrow(grp)
+f &lt;- Surv(start, end, event, type=&quot;counting&quot;) ~ race_factor * decile_score + age_factor + gender_factor +
+                                                 priors_count + crime_factor
+felonies &lt;- c(&#39;(F1)&#39;,&#39;(F2)&#39;, &#39;(F3)&#39;,&#39;(F5)&#39;,&#39;(F6)&#39;,&#39;(F7)&#39;)
+data_filtered &lt;-  mutate(data, crime_factor = factor(ifelse(c_charge_degree %in% felonies, &#39;F&#39;, &#39;M&#39;))) %&gt;%
+                  mutate(age_factor = as.factor(age_cat)) %&gt;%
+                  within(age_factor &lt;- relevel(age_factor, ref = 1)) %&gt;%
+                  mutate(gender_factor = factor(sex, labels= c(&quot;Female&quot;,&quot;Male&quot;))) %&gt;%
+                  within(gender_factor &lt;- relevel(gender_factor, ref = 2)) %&gt;%
+                  filter(days_b_screening_arrest &lt;= 30) %&gt;%
+                  filter(days_b_screening_arrest &gt;= -30) %&gt;%
+                  filter(is_recid != -1)
+grp &lt;- data_filtered[!duplicated(data_filtered$id),]
+print(nrow(grp))
+model &lt;- coxph(f, data=data_filtered)
+print(summary(model))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: Erreur dans library(ggfortify) : 
+  aucun package nommé ‘ggfortify’ n&#39;est trouvé
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Erreur dans library(ggfortify) : 
+  aucun package nommé ‘ggfortify’ n&#39;est trouvé
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+RRuntimeError                             Traceback (most recent call last)
+File ~/Library/Python/3.9/lib/python/site-packages/rpy2/ipython/rmagic.py:331, in RMagics.eval(self, code)
+    329 try:
+    330     # Need the newline in case the last line in code is a comment.
+--&gt; 331     value, visible = ro.r(&quot;withVisible({%s\n})&quot; % code)
+    332 except (ri.embedded.RRuntimeError, ValueError) as exception:
+    333     # Otherwise next return seems to have copy of error.
+
+File ~/Library/Python/3.9/lib/python/site-packages/rpy2/robjects/__init__.py:459, in R.__call__(self, string)
+    458 p = rinterface.parse(string)
+--&gt; 459 res = self.eval(p)
+    460 return conversion.get_conversion().rpy2py(res)
+
+File ~/Library/Python/3.9/lib/python/site-packages/rpy2/robjects/functions.py:204, in SignatureTranslatedFunction.__call__(self, *args, **kwargs)
+    203         kwargs[r_k] = v
+--&gt; 204 return (super(SignatureTranslatedFunction, self)
+    205         .__call__(*args, **kwargs))
+
+File ~/Library/Python/3.9/lib/python/site-packages/rpy2/robjects/functions.py:127, in Function.__call__(self, *args, **kwargs)
+    126         new_kwargs[k] = cv.py2rpy(v)
+--&gt; 127 res = super(Function, self).__call__(*new_args, **new_kwargs)
+    128 res = cv.rpy2py(res)
+
+File ~/Library/Python/3.9/lib/python/site-packages/rpy2/rinterface_lib/conversion.py:45, in _cdata_res_to_rinterface.&lt;locals&gt;._(*args, **kwargs)
+     44 def _(*args, **kwargs):
+---&gt; 45     cdata = function(*args, **kwargs)
+     46     # TODO: test cdata is of the expected CType
+
+File ~/Library/Python/3.9/lib/python/site-packages/rpy2/rinterface.py:815, in SexpClosure.__call__(self, *args, **kwargs)
+    814     if error_occured[0]:
+--&gt; 815         raise embedded.RRuntimeError(_rinterface._geterrmessage())
+    816 return res
+
+RRuntimeError: Erreur dans library(ggfortify) : 
+  aucun package nommé ‘ggfortify’ n&#39;est trouvé
+
+
+During handling of the above exception, another exception occurred:
+
+RInterpreterError                         Traceback (most recent call last)
+Cell In [2], line 1
+----&gt; 1 get_ipython().run_cell_magic(&#39;R&#39;, &#39;&#39;, &#39;library(survival)\nlibrary(ggfortify)\nlibrary(dplyr)\n\ndata &lt;- filter(filter(read.csv(&quot;./cox-parsed.csv&quot;), score_text != &quot;N/A&quot;), end &gt; start) %&gt;%\n        mutate(race_factor = factor(race,\n                                  labels = c(&quot;African-American&quot;, \n                                             &quot;Asian&quot;,\n                                             &quot;Caucasian&quot;, \n                                             &quot;Hispanic&quot;, \n                                             &quot;Native American&quot;,\n                                             &quot;Other&quot;))) %&gt;%\n        within(race_factor &lt;- relevel(race_factor, ref = 3))\n\ngrp &lt;- data[!duplicated(data$id),]\nnrow(grp)\nf &lt;- Surv(start, end, event, type=&quot;counting&quot;) ~ race_factor * decile_score + age_factor + gender_factor +\n                                                 priors_count + crime_factor\nfelonies &lt;- c(\&#39;(F1)\&#39;,\&#39;(F2)\&#39;, \&#39;(F3)\&#39;,\&#39;(F5)\&#39;,\&#39;(F6)\&#39;,\&#39;(F7)\&#39;)\ndata_filtered &lt;-  mutate(data, crime_factor = factor(ifelse(c_charge_degree %in% felonies, \&#39;F\&#39;, \&#39;M\&#39;))) %&gt;%\n                  mutate(age_factor = as.factor(age_cat)) %&gt;%\n                  within(age_factor &lt;- relevel(age_factor, ref = 1)) %&gt;%\n                  mutate(gender_factor = factor(sex, labels= c(&quot;Female&quot;,&quot;Male&quot;))) %&gt;%\n                  within(gender_factor &lt;- relevel(gender_factor, ref = 2)) %&gt;%\n                  filter(days_b_screening_arrest &lt;= 30) %&gt;%\n                  filter(days_b_screening_arrest &gt;= -30) %&gt;%\n                  filter(is_recid != -1)\ngrp &lt;- data_filtered[!duplicated(data_filtered$id),]\nprint(nrow(grp))\nmodel &lt;- coxph(f, data=data_filtered)\nprint(summary(model))\n&#39;)
+
+File ~/Library/Python/3.9/lib/python/site-packages/IPython/core/interactiveshell.py:2362, in InteractiveShell.run_cell_magic(self, magic_name, line, cell)
+   2360 with self.builtin_trap:
+   2361     args = (magic_arg_s, cell)
+-&gt; 2362     result = fn(*args, **kwargs)
+   2363 return result
+
+File ~/Library/Python/3.9/lib/python/site-packages/rpy2/ipython/rmagic.py:868, in RMagics.R(self, line, cell, local_ns)
+    866     if not e.stdout.endswith(e.err):
+    867         print(e.err)
+--&gt; 868     raise e
+    869 finally:
+    870     if self.device in [&#39;png&#39;, &#39;svg&#39;]:
+
+File ~/Library/Python/3.9/lib/python/site-packages/rpy2/ipython/rmagic.py:848, in RMagics.R(self, line, cell, local_ns)
+    846         return_output = False
+    847 else:
+--&gt; 848     text_result, result, visible = self.eval(code)
+    849     text_output += text_result
+    850     if visible:
+
+File ~/Library/Python/3.9/lib/python/site-packages/rpy2/ipython/rmagic.py:335, in RMagics.eval(self, code)
+    332 except (ri.embedded.RRuntimeError, ValueError) as exception:
+    333     # Otherwise next return seems to have copy of error.
+    334     warning_or_other_msg = self.flush()
+--&gt; 335     raise RInterpreterError(code, str(exception),
+    336                             warning_or_other_msg)
+    337 text_output = self.flush()
+    338 return text_output, value, visible[0]
+
+RInterpreterError: Failed to parse and evaluate line &#39;library(survival)\nlibrary(ggfortify)\nlibrary(dplyr)\n\ndata &lt;- filter(filter(read.csv(&quot;./cox-parsed.csv&quot;), score_text != &quot;N/A&quot;), end &gt; start) %&gt;%\n        mutate(race_factor = factor(race,\n                                  labels = c(&quot;African-American&quot;, \n                                             &quot;Asian&quot;,\n                                             &quot;Caucasian&quot;, \n                                             &quot;Hispanic&quot;, \n                                             &quot;Native American&quot;,\n                                             &quot;Other&quot;))) %&gt;%\n        within(race_factor &lt;- relevel(race_factor, ref = 3))\n\ngrp &lt;- data[!duplicated(data$id),]\nnrow(grp)\nf &lt;- Surv(start, end, event, type=&quot;counting&quot;) ~ race_factor * decile_score + age_factor + gender_factor +\n                                                 priors_count + crime_factor\nfelonies &lt;- c(\&#39;(F1)\&#39;,\&#39;(F2)\&#39;, \&#39;(F3)\&#39;,\&#39;(F5)\&#39;,\&#39;(F6)\&#39;,\&#39;(F7)\&#39;)\ndata_filtered &lt;-  mutate(data, crime_factor = factor(ifelse(c_charge_degree %in% felonies, \&#39;F\&#39;, \&#39;M\&#39;))) %&gt;%\n                  mutate(age_factor = as.factor(age_cat)) %&gt;%\n                  within(age_factor &lt;- relevel(age_factor, ref = 1)) %&gt;%\n                  mutate(gender_factor = factor(sex, labels= c(&quot;Female&quot;,&quot;Male&quot;))) %&gt;%\n                  within(gender_factor &lt;- relevel(gender_factor, ref = 2)) %&gt;%\n                  filter(days_b_screening_arrest &lt;= 30) %&gt;%\n                  filter(days_b_screening_arrest &gt;= -30) %&gt;%\n                  filter(is_recid != -1)\ngrp &lt;- data_filtered[!duplicated(data_filtered$id),]\nprint(nrow(grp))\nmodel &lt;- coxph(f, data=data_filtered)\nprint(summary(model))\n&#39;.
+R error message: &quot;Erreur dans library(ggfortify) : \n  aucun package nommé ‘ggfortify’ n&#39;est trouvé&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+d &lt;- c(1:10)
+data.frame(decile_score=d, black_vs_white_hazard_ratio=exp(0.244810 - 0.042704 * d))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   decile_score black_vs_white_hazard_ratio
+1             1                   1.2239777
+2             2                   1.1728093
+3             3                   1.1237800
+4             4                   1.0768003
+5             5                   1.0317847
+6             6                   0.9886509
+7             7                   0.9473203
+8             8                   0.9077176
+9             9                   0.8697704
+10           10                   0.8334096
+</pre></div>
+</div>
+</div>
+</div>
+<h2 id="logistic">Logistic regression without two year recidivism term</h2><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+raw_data &lt;- read.csv(&quot;./compas-scores-two-years.csv&quot;)
+
+df &lt;- dplyr::select(raw_data, age, c_charge_degree, race, age_cat, score_text, sex, priors_count, 
+                    days_b_screening_arrest, decile_score, is_recid, two_year_recid, c_jail_in, c_jail_out) %&gt;% 
+        filter(days_b_screening_arrest &lt;= 30) %&gt;%
+        filter(days_b_screening_arrest &gt;= -30) %&gt;%
+        filter(is_recid != -1) %&gt;%
+        filter(c_charge_degree != &quot;O&quot;) %&gt;%
+        filter(score_text != &#39;N/A&#39;)
+
+df &lt;- mutate(df, crime_factor = factor(c_charge_degree)) %&gt;%
+      mutate(age_factor = as.factor(age_cat)) %&gt;%
+      within(age_factor &lt;- relevel(age_factor, ref = 1)) %&gt;%
+      mutate(race_factor = factor(race)) %&gt;%
+      within(race_factor &lt;- relevel(race_factor, ref = 3)) %&gt;%
+      mutate(gender_factor = factor(sex, labels= c(&quot;Female&quot;,&quot;Male&quot;))) %&gt;%
+      within(gender_factor &lt;- relevel(gender_factor, ref = 2)) %&gt;%
+      mutate(score_factor = factor(score_text != &quot;Low&quot;, labels = c(&quot;LowScore&quot;,&quot;HighScore&quot;)))
+model &lt;- glm(score_factor ~ gender_factor + age_factor + race_factor +
+                            priors_count + crime_factor, family=&quot;binomial&quot;, data=df)
+summary(model)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = score_factor ~ gender_factor + age_factor + race_factor + 
+    priors_count + crime_factor, family = &quot;binomial&quot;, data = df)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-3.0121  -0.8145  -0.3530   0.8730   2.6669  
+
+Coefficients:
+                            Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)                 -1.26216    0.07299 -17.292  &lt; 2e-16 ***
+gender_factorFemale          0.15947    0.07840   2.034 0.041955 *  
+age_factorGreater than 45   -1.44095    0.09880 -14.585  &lt; 2e-16 ***
+age_factorLess than 25       1.39347    0.07461  18.678  &lt; 2e-16 ***
+race_factorAfrican-American  0.47752    0.06857   6.964 3.31e-12 ***
+race_factorAsian            -0.33630    0.47811  -0.703 0.481813    
+race_factorHispanic         -0.44192    0.12702  -3.479 0.000503 ***
+race_factorNative American   1.25136    0.74518   1.679 0.093096 .  
+race_factorOther            -0.82409    0.16043  -5.137 2.79e-07 ***
+priors_count                 0.29502    0.01103  26.736  &lt; 2e-16 ***
+crime_factorM               -0.33652    0.06575  -5.118 3.08e-07 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 8483.3  on 6171  degrees of freedom
+Residual deviance: 6282.7  on 6161  degrees of freedom
+AIC: 6304.7
+
+Number of Fisher Scoring iterations: 5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+control &lt;- exp(-1.26216) / (1 + exp(-1.26216))
+exp(0.47752) / (1 - control + (control * exp(0.47752)))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 1.420297
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+library(car)
+vif(model &lt;- glm(score_factor ~ gender_factor + age_factor + race_factor +
+                            priors_count + crime_factor + two_year_recid, family=&quot;binomial&quot;, data=df))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                   GVIF Df GVIF^(1/(2*Df))
+gender_factor  1.030437  1        1.015104
+age_factor     1.195754  2        1.045708
+race_factor    1.029395  5        1.002901
+priors_count   1.235550  1        1.111553
+crime_factor   1.015181  1        1.007562
+two_year_recid 1.046079  1        1.022780
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span> -w 900 -h 900 -u px
+library(pROC)
+raw_data &lt;- read.csv(&quot;./compas-scores-two-years.csv&quot;)
+raw_data &lt;- mutate(raw_data, score_factor = factor(score_text != &quot;Low&quot;, labels = c(&quot;LowScore&quot;,&quot;HighScore&quot;)))
+w &lt;- filter(raw_data, race==&quot;Caucasian&quot;)
+wroc &lt;- roc(two_year_recid ~ decile_score, data=w)
+b &lt;- filter(raw_data, race==&quot;African-American&quot;)
+broc &lt;- roc(two_year_recid ~ decile_score, data=b)
+</pre></div>
+</div>
+</div>
+</div>
+<h2 id="roc-curves">Unsmoothed ROC Curves</h2><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>  -w 900 -h 900 -u px
+library(gridExtra)
+w &lt;- filter(raw_data, race==&quot;Caucasian&quot;)
+wroc &lt;- roc(two_year_recid ~ decile_score, data=w)
+b &lt;- filter(raw_data, race==&quot;African-American&quot;)
+broc &lt;- roc(two_year_recid ~ decile_score, data=b)
+plot(wroc)
+plot(broc, add=TRUE, col=&quot;red&quot;)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+roc.formula(formula = two_year_recid ~ decile_score, data = b)
+
+Data: decile_score in 1795 controls (two_year_recid 0) &lt; 1901 cases (two_year_recid 1).
+Area under the curve: 0.6918
+</pre></div>
+</div>
+<img alt="../_images/Cox with interaction term and independent variables_10_1.png" src="../_images/Cox with interaction term and independent variables_10_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span> -w 900 -h 900 -u px
+wroc &lt;- roc(two_year_recid ~ decile_score, data=w, smooth=TRUE)
+broc &lt;- roc(two_year_recid ~ decile_score, data=b, smooth=TRUE)
+plot(wroc)
+plot(broc, col=&quot;red&quot;, add=TRUE)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+roc.formula(formula = two_year_recid ~ decile_score, data = b,     smooth = TRUE)
+
+Data: decile_score in 1795 controls (two_year_recid 0) &lt; 1901 cases (two_year_recid 1).
+Smoothing: binormal 
+Area under the curve: 0.6935
+</pre></div>
+</div>
+<img alt="../_images/Cox with interaction term and independent variables_11_1.png" src="../_images/Cox with interaction term and independent variables_11_1.png" />
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./data"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Group 3<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
