@@ -1,0 +1,2346 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Compas Analysis &#8212; DSWiSe2022 Group 3 Project</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">DSWiSe2022 Group 3 Project</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Are the COMPAS risk scales racially biased against blacks?
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Background
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="compas.html">
+   COMPAS Algorithm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="critisms.html">
+   COMPAS Critisms
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Analysis of COMPAS fairness
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   COMPAS Racial Bias Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Acknowledgements
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="references.html">
+   References
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About us
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="team.html">
+   Team Members
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/2022-12-30 Compas Analysis_com_jivi.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/2022-12-30 Compas Analysis_com_jivi.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-the-data">
+   Loading the Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#racial-bias-in-compas">
+   Racial Bias in Compas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#risk-of-violent-recidivism">
+     Risk of Violent Recidivism
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predictive-accuracy-of-compas">
+   Predictive Accuracy of COMPAS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#directions-of-the-racial-bias">
+   Directions of the Racial Bias
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Risk of Violent Recidivism
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gender-differences-in-compas-scores">
+   Gender differences in Compas scores
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Compas Analysis</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-the-data">
+   Loading the Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#racial-bias-in-compas">
+   Racial Bias in Compas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#risk-of-violent-recidivism">
+     Risk of Violent Recidivism
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predictive-accuracy-of-compas">
+   Predictive Accuracy of COMPAS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#directions-of-the-racial-bias">
+   Directions of the Racial Bias
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Risk of Violent Recidivism
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gender-differences-in-compas-scores">
+   Gender differences in Compas scores
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="compas-analysis">
+<h1>Compas Analysis<a class="headerlink" href="#compas-analysis" title="Permalink to this headline">#</a></h1>
+<p>What follows are the calculations performed for ProPublica’s analaysis of the COMPAS Recidivism Risk Scores. It might be helpful to open <a class="reference external" href="https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm/">the methodology</a> in another tab to understand the following.</p>
+<section id="loading-the-data">
+<h2>Loading the Data<a class="headerlink" href="#loading-the-data" title="Permalink to this headline">#</a></h2>
+<p>We select fields for severity of charge, number of priors, demographics, age, sex, compas scores, and whether each person was accused of a crime within two years.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># filter dplyr warnings</span>
+<span class="o">%</span><span class="k">load_ext</span> rpy2.ipython
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+library(dplyr)
+library(ggplot2)
+raw_data &lt;- read.csv(&quot;./compas-scores-two-years.csv&quot;)
+nrow(raw_data) #count rows
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R[write to console]: Erreur dans library(dplyr) : aucun package nommé ‘dplyr’ n&#39;est trouvé
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Erreur dans library(dplyr) : aucun package nommé ‘dplyr’ n&#39;est trouvé
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RRuntimeError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/rpy2/ipython/rmagic.py:331,</span> in <span class="ni">RMagics.eval</span><span class="nt">(self, code)</span>
+<span class="g g-Whitespace">    </span><span class="mi">329</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="c1"># Need the newline in case the last line in code is a comment.</span>
+<span class="ne">--&gt; </span><span class="mi">331</span>     <span class="n">value</span><span class="p">,</span> <span class="n">visible</span> <span class="o">=</span> <span class="n">ro</span><span class="o">.</span><span class="n">r</span><span class="p">(</span><span class="s2">&quot;withVisible({</span><span class="si">%s</span><span class="se">\n</span><span class="s2">})&quot;</span> <span class="o">%</span> <span class="n">code</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">332</span> <span class="k">except</span> <span class="p">(</span><span class="n">ri</span><span class="o">.</span><span class="n">embedded</span><span class="o">.</span><span class="n">RRuntimeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">exception</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">333</span>     <span class="c1"># Otherwise next return seems to have copy of error.</span>
+
+<span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/rpy2/robjects/__init__.py:459,</span> in <span class="ni">R.__call__</span><span class="nt">(self, string)</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span> <span class="n">p</span> <span class="o">=</span> <span class="n">rinterface</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">459</span> <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="k">return</span> <span class="n">conversion</span><span class="o">.</span><span class="n">get_conversion</span><span class="p">()</span><span class="o">.</span><span class="n">rpy2py</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/rpy2/robjects/functions.py:204,</span> in <span class="ni">SignatureTranslatedFunction.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span>         <span class="n">kwargs</span><span class="p">[</span><span class="n">r_k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+<span class="ne">--&gt; </span><span class="mi">204</span> <span class="k">return</span> <span class="p">(</span><span class="nb">super</span><span class="p">(</span><span class="n">SignatureTranslatedFunction</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span>         <span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+
+<span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/rpy2/robjects/functions.py:127,</span> in <span class="ni">Function.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span>         <span class="n">new_kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">py2rpy</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">127</span> <span class="n">res</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Function</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">new_args</span><span class="p">,</span> <span class="o">**</span><span class="n">new_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span> <span class="n">res</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">rpy2py</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/rpy2/rinterface_lib/conversion.py:45,</span> in <span class="ni">_cdata_res_to_rinterface.&lt;locals&gt;._</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">45</span>     <span class="n">cdata</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="c1"># TODO: test cdata is of the expected CType</span>
+
+<span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/rpy2/rinterface.py:815,</span> in <span class="ni">SexpClosure.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">814</span>     <span class="k">if</span> <span class="n">error_occured</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+<span class="ne">--&gt; </span><span class="mi">815</span>         <span class="k">raise</span> <span class="n">embedded</span><span class="o">.</span><span class="n">RRuntimeError</span><span class="p">(</span><span class="n">_rinterface</span><span class="o">.</span><span class="n">_geterrmessage</span><span class="p">())</span>
+<span class="g g-Whitespace">    </span><span class="mi">816</span> <span class="k">return</span> <span class="n">res</span>
+
+<span class="ne">RRuntimeError</span>: Erreur dans library(dplyr) : aucun package nommé ‘dplyr’ n&#39;est trouvé
+
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">RInterpreterError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;library(dplyr)</span><span class="se">\n</span><span class="s1">library(ggplot2)</span><span class="se">\n</span><span class="s1">raw_data &lt;- read.csv(&quot;./compas-scores-two-years.csv&quot;)</span><span class="se">\n</span><span class="s1">nrow(raw_data) #count rows</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/IPython/core/interactiveshell.py:2362,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2360</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2361</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2362</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2363</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/rpy2/ipython/rmagic.py:868,</span> in <span class="ni">RMagics.R</span><span class="nt">(self, line, cell, local_ns)</span>
+<span class="g g-Whitespace">    </span><span class="mi">866</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">e</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">err</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">867</span>         <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">err</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">868</span>     <span class="k">raise</span> <span class="n">e</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="s1">&#39;svg&#39;</span><span class="p">]:</span>
+
+<span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/rpy2/ipython/rmagic.py:848,</span> in <span class="ni">RMagics.R</span><span class="nt">(self, line, cell, local_ns)</span>
+<span class="g g-Whitespace">    </span><span class="mi">846</span>         <span class="n">return_output</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">847</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">848</span>     <span class="n">text_result</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">visible</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">849</span>     <span class="n">text_output</span> <span class="o">+=</span> <span class="n">text_result</span>
+<span class="g g-Whitespace">    </span><span class="mi">850</span>     <span class="k">if</span> <span class="n">visible</span><span class="p">:</span>
+
+<span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/rpy2/ipython/rmagic.py:335,</span> in <span class="ni">RMagics.eval</span><span class="nt">(self, code)</span>
+<span class="g g-Whitespace">    </span><span class="mi">332</span> <span class="k">except</span> <span class="p">(</span><span class="n">ri</span><span class="o">.</span><span class="n">embedded</span><span class="o">.</span><span class="n">RRuntimeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">exception</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">333</span>     <span class="c1"># Otherwise next return seems to have copy of error.</span>
+<span class="g g-Whitespace">    </span><span class="mi">334</span>     <span class="n">warning_or_other_msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">335</span>     <span class="k">raise</span> <span class="n">RInterpreterError</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">exception</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">336</span>                             <span class="n">warning_or_other_msg</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span> <span class="n">text_output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span> <span class="k">return</span> <span class="n">text_output</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">visible</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="ne">RInterpreterError</span>: Failed to parse and evaluate line &#39;library(dplyr)\nlibrary(ggplot2)\nraw_data &lt;- read.csv(&quot;./compas-scores-two-years.csv&quot;)\nnrow(raw_data) #count rows\n&#39;.
+<span class="n">R</span> <span class="n">error</span> <span class="n">message</span><span class="p">:</span> <span class="s2">&quot;Erreur dans library(dplyr) : aucun package nommé ‘dplyr’ n&#39;est trouvé&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>However not all of the rows are useable for the first round of analysis.</p>
+<p>There are a number of reasons remove rows because of missing data:</p>
+<ul class="simple">
+<li><p>If the charge date of a defendants Compas scored crime was not within 30 days from when the person was arrested, we assume that because of data quality reasons, that we do not have the right offense.</p></li>
+<li><p>We coded the recidivist flag – <code class="docutils literal notranslate"><span class="pre">is_recid</span></code> – to be -1 if we could not find a compas case at all.</p></li>
+<li><p>In a similar vein, ordinary traffic offenses – those with a <code class="docutils literal notranslate"><span class="pre">c_charge_degree</span></code> of ‘O’ – will not result in Jail time are removed (only two of them).</p></li>
+<li><p>We filtered the underlying data from Broward county to include only those rows representing people who had either recidivated in two years, or had at least two years outside of a correctional facility.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+df &lt;- dplyr::select(raw_data, age, c_charge_degree, race, age_cat, score_text, sex, priors_count, 
+                    days_b_screening_arrest, decile_score, is_recid, two_year_recid, c_jail_in, c_jail_out) %&gt;% 
+        filter(days_b_screening_arrest &lt;= 30) %&gt;%
+        filter(days_b_screening_arrest &gt;= -30) %&gt;%
+        filter(is_recid != -1) %&gt;%
+        filter(c_charge_degree != &quot;O&quot;) %&gt;%
+        filter(score_text != &#39;N/A&#39;) #assing the data from the csv to the variable df &amp; filter it for diffrent conditions
+nrow(df)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 6172
+</pre></div>
+</div>
+</div>
+</div>
+<p>Higher COMPAS scores are slightly correlated with a longer length of stay.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+df$length_of_stay &lt;- as.numeric(as.Date(df$c_jail_out) - as.Date(df$c_jail_in)) #creates new column
+cor(df$length_of_stay, df$decile_score) #is there a correlation between these two columns? Yes, slightly
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 0.2073297
+</pre></div>
+</div>
+</div>
+</div>
+<p>After filtering we have the following demographic breakdown:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(df$age_cat)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        25 - 45 Greater than 45    Less than 25 
+           3532            1293            1347 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(df$race)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>African-American            Asian        Caucasian         Hispanic 
+            3175               31             2103              509 
+ Native American            Other 
+              11              343 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#calculating proportions</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Black defendants: </span><span class="si">%.2f%%</span><span class="s2">&quot;</span> <span class="o">%</span>            <span class="p">(</span><span class="mi">3175</span> <span class="o">/</span> <span class="mi">6172</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;White defendants: </span><span class="si">%.2f%%</span><span class="s2">&quot;</span> <span class="o">%</span>            <span class="p">(</span><span class="mi">2103</span> <span class="o">/</span> <span class="mi">6172</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hispanic defendants: </span><span class="si">%.2f%%</span><span class="s2">&quot;</span> <span class="o">%</span>         <span class="p">(</span><span class="mi">509</span>  <span class="o">/</span> <span class="mi">6172</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Asian defendants: </span><span class="si">%.2f%%</span><span class="s2">&quot;</span> <span class="o">%</span>            <span class="p">(</span><span class="mi">31</span>   <span class="o">/</span> <span class="mi">6172</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Native American defendants: </span><span class="si">%.2f%%</span><span class="s2">&quot;</span> <span class="o">%</span>  <span class="p">(</span><span class="mi">11</span>   <span class="o">/</span> <span class="mi">6172</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Black defendants: 51.44%
+White defendants: 34.07%
+Hispanic defendants: 8.25%
+Asian defendants: 0.50%
+Native American defendants: 0.18%
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(df$score_text)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  High    Low Medium 
+  1144   3421   1607 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+xtabs(~ sex + race, data=df) #crosstab
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        race
+sex      African-American Asian Caucasian Hispanic Native American Other
+  Female              549     2       482       82               2    58
+  Male               2626    29      1621      427               9   285
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(df$sex)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Female   Male 
+  1175   4997 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Men: </span><span class="si">%.2f%%</span><span class="s2">&quot;</span> <span class="o">%</span>   <span class="p">(</span><span class="mi">4997</span> <span class="o">/</span> <span class="mi">6172</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Women: </span><span class="si">%.2f%%</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1175</span> <span class="o">/</span> <span class="mi">6172</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Men: 80.96%
+Women: 19.04%
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+nrow(filter(df, two_year_recid == 1)) #did they recidivate again or not. 1 = yes
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 2809
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+nrow(filter(df, two_year_recid == 1)) / nrow(df) * 100 # 45% of people of our dataframe recidivated
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 45.51199
+</pre></div>
+</div>
+</div>
+</div>
+<p>Judges are often presented with two sets of scores from the Compas system – one that classifies people into High, Medium and Low risk, and a corresponding decile score. There is a clear downward trend in the decile scores as those scores increase for white defendants.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span> -w 900 -h 363 -u px
+library(grid)
+library(gridExtra)
+pblack &lt;- ggplot(data=filter(df, race ==&quot;African-American&quot;), aes(ordered(decile_score))) + 
+          geom_bar() + xlab(&quot;Decile Score&quot;) +
+          ylim(0, 650) + ggtitle(&quot;Black Defendant&#39;s Decile Scores&quot;) # plot for blacks
+pwhite &lt;- ggplot(data=filter(df, race ==&quot;Caucasian&quot;), aes(ordered(decile_score))) + 
+          geom_bar() + xlab(&quot;Decile Score&quot;) +
+          ylim(0, 650) + ggtitle(&quot;White Defendant&#39;s Decile Scores&quot;) #plot for whites
+grid.arrange(pblack, pwhite,  ncol = 2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2022-12-30 Compas Analysis_com_jivi_18_0.png" src="_images/2022-12-30 Compas Analysis_com_jivi_18_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+xtabs(~ decile_score + race, data=df)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            race
+decile_score African-American Asian Caucasian Hispanic Native American Other
+          1               365    15       605      159               0   142
+          2               346     4       321       89               2    60
+          3               298     5       238       73               1    32
+          4               337     0       243       47               0    39
+          5               323     1       200       39               0    19
+          6               318     2       160       27               2    20
+          7               343     1       113       28               2     9
+          8               301     2        96       14               0     7
+          9               317     0        77       17               2     7
+          10              227     1        50       16               2     8
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="racial-bias-in-compas">
+<h2>Racial Bias in Compas<a class="headerlink" href="#racial-bias-in-compas" title="Permalink to this headline">#</a></h2>
+<p>After filtering out bad rows, our first question is whether there is a significant difference in Compas scores between races. To do so we need to change some variables into factors, and run a logistic regression, comparing low scores to high scores.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+#Factors are the data objects which are used to categorize the data and store it as levels. They can store both strings and integers. They are useful in the columns which have a limited number of unique values. Like &quot;Male, &quot;Female&quot; and True, False etc. They are useful in data analysis for statistical modeling.
+df &lt;- mutate(df, crime_factor = factor(c_charge_degree)) %&gt;%
+      mutate(age_factor = as.factor(age_cat)) %&gt;%
+      within(age_factor &lt;- relevel(age_factor, ref = 1)) %&gt;% #sorting / ordering the factors
+      mutate(race_factor = factor(race)) %&gt;%
+      within(race_factor &lt;- relevel(race_factor, ref = 3)) %&gt;%
+      mutate(gender_factor = factor(sex, labels= c(&quot;Female&quot;,&quot;Male&quot;))) %&gt;%
+      within(gender_factor &lt;- relevel(gender_factor, ref = 2)) %&gt;%
+      mutate(score_factor = factor(score_text != &quot;Low&quot;, labels = c(&quot;LowScore&quot;,&quot;HighScore&quot;))) #
+model &lt;- glm(score_factor ~ gender_factor + age_factor + race_factor +
+                            priors_count + crime_factor + two_year_recid, family=&quot;binomial&quot;, data=df) 
+# regression = generalized linear model, by default gausian regression but here binomial regression
+summary(model)
+
+#z-score is tge number of standard deviations away from the mean of a given population
+#https://stats.stackexchange.com/questions/86351/interpretation-of-rs-output-for-binomial-regression
+#signif. codes are only for z-value
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = score_factor ~ gender_factor + age_factor + race_factor + 
+    priors_count + crime_factor + two_year_recid, family = &quot;binomial&quot;, 
+    data = df)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-2.9966  -0.7919  -0.3303   0.8121   2.6024  
+
+Coefficients:
+                            Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)                 -1.52554    0.07851 -19.430  &lt; 2e-16 ***
+gender_factorFemale          0.22127    0.07951   2.783 0.005388 ** 
+age_factorGreater than 45   -1.35563    0.09908 -13.682  &lt; 2e-16 ***
+age_factorLess than 25       1.30839    0.07593  17.232  &lt; 2e-16 ***
+race_factorAfrican-American  0.47721    0.06935   6.881 5.93e-12 ***
+race_factorAsian            -0.25441    0.47821  -0.532 0.594717    
+race_factorHispanic         -0.42839    0.12813  -3.344 0.000827 ***
+race_factorNative American   1.39421    0.76612   1.820 0.068784 .  
+race_factorOther            -0.82635    0.16208  -5.098 3.43e-07 ***
+priors_count                 0.26895    0.01110  24.221  &lt; 2e-16 ***
+crime_factorM               -0.31124    0.06655  -4.677 2.91e-06 ***
+two_year_recid               0.68586    0.06402  10.713  &lt; 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 8483.3  on 6171  degrees of freedom
+Residual deviance: 6168.4  on 6160  degrees of freedom
+AIC: 6192.4
+
+Number of Fisher Scoring iterations: 5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Black defendants are 45% more likely than white defendants to receive a higher score correcting for the seriousness of their crime, previous arrests, and future criminal behavior.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+control &lt;- exp(-1.52554) / (1 + exp(-1.52554)) #control group (white, male, medium age) = Intercept (thought of Joana: that&#39;s qhy they did the releveling, to get this default intercept with these attributes)
+exp(0.47721) / (1 - control + (control * exp(0.47721))) #treatment group for race
+&#39;&#39;&#39;Controlling for a variable means estimating the difference in average outcome between a treatment group 
+and a control group within a specific category/value of the controlled variable. Regression is a convenient 
+estimation strategy that helps us control for confounding variables.&#39;&#39;&#39;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 1.452841
+</pre></div>
+</div>
+</div>
+</div>
+<p>Women are 19.4% more likely than men to get a higher score.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+exp(0.22127) / (1 - control + (control * exp(0.22127))) #treatment group for sex
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 1.194798
+</pre></div>
+</div>
+</div>
+</div>
+<p>Most surprisingly, people under 25 are 2.5 times as likely to get a higher score as middle aged defendants.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span> #age
+exp(1.30839) / (1 - control + (control * exp(1.30839))) #treatment group for age
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 2.49612
+</pre></div>
+</div>
+</div>
+</div>
+<section id="risk-of-violent-recidivism">
+<h3>Risk of Violent Recidivism<a class="headerlink" href="#risk-of-violent-recidivism" title="Permalink to this headline">#</a></h3>
+<p>Compas also offers a score that aims to measure a persons risk of violent recidivism, which has a similar overall accuracy to the Recidivism score. As before, we can use a logistic regression to test for racial bias.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+raw_data &lt;- read.csv(&quot;./compas-scores-two-years-violent.csv&quot;)
+nrow(raw_data)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 4743
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+df &lt;- dplyr::select(raw_data, age, c_charge_degree, race, age_cat, v_score_text, sex, priors_count, 
+                    days_b_screening_arrest, v_decile_score, is_recid, two_year_recid) %&gt;% 
+        filter(days_b_screening_arrest &lt;= 30) %&gt;%
+        filter(days_b_screening_arrest &gt;= -30) %&gt;% 
+        filter(is_recid != -1) %&gt;%
+        filter(c_charge_degree != &quot;O&quot;) %&gt;%
+        filter(v_score_text != &#39;N/A&#39;)
+nrow(df)
+
+#diffrence here is that they take v_decile_score and v_score_text. This is why it&#39;s diffrent data
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 4020
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(df$age_cat)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        25 - 45 Greater than 45    Less than 25 
+           2300             954             766 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(df$race)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>African-American            Asian        Caucasian         Hispanic 
+            1918               26             1459              355 
+ Native American            Other 
+               7              255 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(df$v_score_text)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  High    Low Medium 
+   279   2913    828 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+nrow(filter(df, two_year_recid == 1)) / nrow(df) * 100 #16% recidivated
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 16.21891
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+nrow(filter(df, two_year_recid == 1)) #652 people of 4020 recidivated
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 652
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span> -w 900 -h 363 -u px
+library(grid)
+library(gridExtra)
+pblack &lt;- ggplot(data=filter(df, race ==&quot;African-American&quot;), aes(ordered(v_decile_score))) + 
+          geom_bar() + xlab(&quot;Violent Decile Score&quot;) +
+          ylim(0, 700) + ggtitle(&quot;Black Defendant&#39;s Violent Decile Scores&quot;)
+pwhite &lt;- ggplot(data=filter(df, race ==&quot;Caucasian&quot;), aes(ordered(v_decile_score))) + 
+          geom_bar() + xlab(&quot;Violent Decile Score&quot;) +
+          ylim(0, 700) + ggtitle(&quot;White Defendant&#39;s Violent Decile Scores&quot;)
+grid.arrange(pblack, pwhite,  ncol = 2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2022-12-30 Compas Analysis_com_jivi_36_0.png" src="_images/2022-12-30 Compas Analysis_com_jivi_36_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+df &lt;- mutate(df, crime_factor = factor(c_charge_degree)) %&gt;%
+      mutate(age_factor = as.factor(age_cat)) %&gt;%
+      within(age_factor &lt;- relevel(age_factor, ref = 1)) %&gt;%
+      mutate(race_factor = factor(race,
+                                  labels = c(&quot;African-American&quot;, 
+                                             &quot;Asian&quot;,
+                                             &quot;Caucasian&quot;, 
+                                             &quot;Hispanic&quot;, 
+                                             &quot;Native American&quot;,
+                                             &quot;Other&quot;))) %&gt;%
+      within(race_factor &lt;- relevel(race_factor, ref = 3)) %&gt;%
+      mutate(gender_factor = factor(sex, labels= c(&quot;Female&quot;,&quot;Male&quot;))) %&gt;%
+      within(gender_factor &lt;- relevel(gender_factor, ref = 2)) %&gt;%
+      mutate(score_factor = factor(v_score_text != &quot;Low&quot;, labels = c(&quot;LowScore&quot;,&quot;HighScore&quot;)))#caution: It&#39;S v_score not score
+model &lt;- glm(score_factor ~ gender_factor + age_factor + race_factor +
+                            priors_count + crime_factor + two_year_recid, family=&quot;binomial&quot;, data=df)
+summary(model)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = score_factor ~ gender_factor + age_factor + race_factor + 
+    priors_count + crime_factor + two_year_recid, family = &quot;binomial&quot;, 
+    data = df)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-2.9304  -0.5667  -0.3161   0.4192   2.8386  
+
+Coefficients:
+                            Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)                 -2.24274    0.11326 -19.802  &lt; 2e-16 ***
+gender_factorFemale         -0.72890    0.12666  -5.755 8.66e-09 ***
+age_factorGreater than 45   -1.74208    0.18415  -9.460  &lt; 2e-16 ***
+age_factorLess than 25       3.14591    0.11541  27.259  &lt; 2e-16 ***
+race_factorAfrican-American  0.65893    0.10815   6.093 1.11e-09 ***
+race_factorAsian            -0.98521    0.70537  -1.397   0.1625    
+race_factorHispanic         -0.06416    0.19133  -0.335   0.7374    
+race_factorNative American   0.44793    1.03546   0.433   0.6653    
+race_factorOther            -0.20543    0.22464  -0.914   0.3605    
+priors_count                 0.13764    0.01161  11.854  &lt; 2e-16 ***
+crime_factorM               -0.16367    0.09807  -1.669   0.0951 .  
+two_year_recid               0.93448    0.11527   8.107 5.20e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 4731.8  on 4019  degrees of freedom
+Residual deviance: 2998.8  on 4008  degrees of freedom
+AIC: 3022.8
+
+Number of Fisher Scoring iterations: 6
+</pre></div>
+</div>
+</div>
+</div>
+<p>The violent score overpredicts recidivism for black defendants by 77.3% compared to white defendants.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+control &lt;- exp(-2.24274) / (1 + exp(-2.24274)) #white, medium aged, male as testing group
+exp(0.65893) / (1 - control + (control * exp(0.65893))) #treatment group
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 1.773921
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defendands under 25 are 7.4 times as likely to get a higher score as middle aged defendants.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+exp(3.14591) / (1 - control + (control * exp(3.14591)))
+
+#here they didn&#39;t control for gender
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UsageError: Cell magic `%%R` not found.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="predictive-accuracy-of-compas">
+<h2>Predictive Accuracy of COMPAS<a class="headerlink" href="#predictive-accuracy-of-compas" title="Permalink to this headline">#</a></h2>
+<p>In order to test whether Compas scores do an accurate job of deciding whether an offender is Low, Medium or High risk,  we ran a Cox Proportional Hazards model. Northpointe, the company that created COMPAS and markets it to Law Enforcement, also ran a Cox model in their <a class="reference external" href="http://cjb.sagepub.com/content/36/1/21.abstract">validation study</a>.</p>
+<p>We used the counting model and removed people when they were incarcerated. Due to errors in the underlying jail data, we need to filter out 32 rows that have an end date more than the start date. Considering that there are 13,334 total rows in the data, such a small amount of errors will not affect the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+library(survival)
+library(ggfortify)
+
+data &lt;- filter(filter(read.csv(&quot;./cox-parsed.csv&quot;), score_text != &quot;N/A&quot;), end &gt; start) %&gt;%
+        mutate(race_factor = factor(race,
+                                  labels = c(&quot;African-American&quot;, 
+                                             &quot;Asian&quot;,
+                                             &quot;Caucasian&quot;, 
+                                             &quot;Hispanic&quot;, 
+                                             &quot;Native American&quot;,
+                                             &quot;Other&quot;))) %&gt;%
+        within(race_factor &lt;- relevel(race_factor, ref = 3)) %&gt;%
+        mutate(score_factor = factor(score_text)) %&gt;%
+        within(score_factor &lt;- relevel(score_factor, ref=2))
+
+grp &lt;- data[!duplicated(data$id),] #! is the logical-NOT operator in R. --&gt; No id should be double
+nrow(grp)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 10314
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(grp$score_factor)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Low   High Medium 
+  5751   1952   2611 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(grp$race_factor)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Caucasian African-American            Asian         Hispanic 
+            3569             5147               51              944 
+ Native American            Other 
+              32              571 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+f &lt;- Surv(start, end, event, type=&quot;counting&quot;) ~ score_factor # 
+model &lt;- coxph(f, data=data) # Cox Proportional Hazards
+summary(model)
+
+&#39;&#39;&#39;only for score factor high and medium, because they consider low indirectly (exp(coef) tells us how likely 
+they are to recidivate compared with the other factors --&gt; core factore Medium is 2.2 times as likely to recidivate 
+than lows)&#39;&#39;&#39;
+
+#interpreting the output: https://stats.stackexchange.com/questions/83892/understanding-coxph-output-in-r
+
+&#39;&#39;&#39;Concordance scores: compare two seemingly same but diffrent scores / The meaning of concordance rate is defined as 
+&quot;the proportion of pairs of individuals that share a particular attribute, given that one of the individuals has that 
+characteristic.&#39;&#39;&#39;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+coxph(formula = f, data = data)
+
+  n= 13344, number of events= 3469 
+
+                      coef exp(coef) se(coef)     z Pr(&gt;|z|)    
+score_factorHigh   1.24969   3.48927  0.04146 30.14   &lt;2e-16 ***
+score_factorMedium 0.79627   2.21725  0.04077 19.53   &lt;2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+                   exp(coef) exp(-coef) lower .95 upper .95
+score_factorHigh       3.489     0.2866     3.217     3.785
+score_factorMedium     2.217     0.4510     2.047     2.402
+
+Concordance= 0.636  (se = 0.004 )
+Rsquare= 0.068   (max possible= 0.99 )
+Likelihood ratio test= 942.8  on 2 df,   p=0
+Wald test            = 954.8  on 2 df,   p=0
+Score (logrank) test = 1055  on 2 df,   p=0
+</pre></div>
+</div>
+</div>
+</div>
+<p>People placed in the High category are 3.5 times as likely to recidivate, and the COMPAS system’s concordance 63.6%. This is lower than the accuracy quoted in the Northpoint study of 68%.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+decile_f &lt;- Surv(start, end, event, type=&quot;counting&quot;) ~ decile_score
+dmodel &lt;- coxph(decile_f, data=data)
+summary(dmodel)
+
+#why don&#39;t they need decile_score as factor to deffrintiate between scores
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+coxph(formula = decile_f, data = data)
+
+  n= 13344, number of events= 3469 
+
+                 coef exp(coef) se(coef)     z Pr(&gt;|z|)    
+decile_score 0.194931  1.215228 0.005801 33.61   &lt;2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+             exp(coef) exp(-coef) lower .95 upper .95
+decile_score     1.215     0.8229     1.201     1.229
+
+Concordance= 0.664  (se = 0.005 )
+Rsquare= 0.08   (max possible= 0.99 )
+Likelihood ratio test= 1112  on 1 df,   p=0
+Wald test            = 1129  on 1 df,   p=0
+Score (logrank) test = 1208  on 1 df,   p=0
+</pre></div>
+</div>
+</div>
+</div>
+<p>COMPAS’s decile scores are a bit more accurate at 66%.</p>
+<p>We can test if the algorithm is behaving differently across races by including a race interaction term in the cox model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+f2 &lt;- Surv(start, end, event, type=&quot;counting&quot;) ~ race_factor + score_factor + race_factor * score_factor
+model &lt;- coxph(f2, data=data)
+print(summary(model))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+coxph(formula = f2, data = data)
+
+  n= 13344, number of events= 3469 
+
+                                                   coef exp(coef) se(coef)
+race_factorAfrican-American                     0.27879   1.32154  0.06080
+race_factorAsian                               -0.77694   0.45981  0.50200
+race_factorHispanic                            -0.06352   0.93846  0.09673
+race_factorNative American                     -1.25468   0.28517  1.00100
+race_factorOther                                0.01419   1.01429  0.11049
+score_factorHigh                                1.28350   3.60927  0.08357
+score_factorMedium                              0.84286   2.32301  0.07142
+race_factorAfrican-American:score_factorHigh   -0.18976   0.82716  0.09985
+race_factorAsian:score_factorHigh               1.31556   3.72684  0.76835
+race_factorHispanic:score_factorHigh           -0.11913   0.88769  0.19833
+race_factorNative American:score_factorHigh     1.95571   7.06896  1.08336
+race_factorOther:score_factorHigh               0.41455   1.51369  0.25921
+race_factorAfrican-American:score_factorMedium -0.17261   0.84147  0.09097
+race_factorAsian:score_factorMedium             0.98619   2.68101  0.71072
+race_factorHispanic:score_factorMedium          0.06529   1.06747  0.16415
+race_factorNative American:score_factorMedium   1.38965   4.01345  1.12032
+race_factorOther:score_factorMedium            -0.33393   0.71610  0.23188
+                                                    z Pr(&gt;|z|)    
+race_factorAfrican-American                     4.586 4.52e-06 ***
+race_factorAsian                               -1.548   0.1217    
+race_factorHispanic                            -0.657   0.5114    
+race_factorNative American                     -1.253   0.2101    
+race_factorOther                                0.128   0.8978    
+score_factorHigh                               15.358  &lt; 2e-16 ***
+score_factorMedium                             11.801  &lt; 2e-16 ***
+race_factorAfrican-American:score_factorHigh   -1.900   0.0574 .  
+race_factorAsian:score_factorHigh               1.712   0.0869 .  
+race_factorHispanic:score_factorHigh           -0.601   0.5480    
+race_factorNative American:score_factorHigh     1.805   0.0710 .  
+race_factorOther:score_factorHigh               1.599   0.1098    
+race_factorAfrican-American:score_factorMedium -1.897   0.0578 .  
+race_factorAsian:score_factorMedium             1.388   0.1653    
+race_factorHispanic:score_factorMedium          0.398   0.6908    
+race_factorNative American:score_factorMedium   1.240   0.2148    
+race_factorOther:score_factorMedium            -1.440   0.1498    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+                                               exp(coef) exp(-coef) lower .95
+race_factorAfrican-American                       1.3215     0.7567   1.17308
+race_factorAsian                                  0.4598     2.1748   0.17190
+race_factorHispanic                               0.9385     1.0656   0.77638
+race_factorNative American                        0.2852     3.5067   0.04009
+race_factorOther                                  1.0143     0.9859   0.81680
+score_factorHigh                                  3.6093     0.2771   3.06395
+score_factorMedium                                2.3230     0.4305   2.01956
+race_factorAfrican-American:score_factorHigh      0.8272     1.2090   0.68014
+race_factorAsian:score_factorHigh                 3.7268     0.2683   0.82664
+race_factorHispanic:score_factorHigh              0.8877     1.1265   0.60179
+race_factorNative American:score_factorHigh       7.0690     0.1415   0.84566
+race_factorOther:score_factorHigh                 1.5137     0.6606   0.91075
+race_factorAfrican-American:score_factorMedium    0.8415     1.1884   0.70405
+race_factorAsian:score_factorMedium               2.6810     0.3730   0.66579
+race_factorHispanic:score_factorMedium            1.0675     0.9368   0.77380
+race_factorNative American:score_factorMedium     4.0135     0.2492   0.44658
+race_factorOther:score_factorMedium               0.7161     1.3964   0.45457
+                                               upper .95
+race_factorAfrican-American                        1.489
+race_factorAsian                                   1.230
+race_factorHispanic                                1.134
+race_factorNative American                         2.028
+race_factorOther                                   1.260
+score_factorHigh                                   4.252
+score_factorMedium                                 2.672
+race_factorAfrican-American:score_factorHigh       1.006
+race_factorAsian:score_factorHigh                 16.802
+race_factorHispanic:score_factorHigh               1.309
+race_factorNative American:score_factorHigh       59.090
+race_factorOther:score_factorHigh                  2.516
+race_factorAfrican-American:score_factorMedium     1.006
+race_factorAsian:score_factorMedium               10.796
+race_factorHispanic:score_factorMedium             1.473
+race_factorNative American:score_factorMedium     36.069
+race_factorOther:score_factorMedium                1.128
+
+Concordance= 0.646  (se = 0.005 )
+Rsquare= 0.072   (max possible= 0.99 )
+Likelihood ratio test= 993.7  on 17 df,   p=0
+Wald test            = 988.8  on 17 df,   p=0
+Score (logrank) test = 1105  on 17 df,   p=0
+</pre></div>
+</div>
+</div>
+</div>
+<p>The interaction term shows a similar disparity as the logistic regression above. (so the same as logistic regression showed overprediction for blacks in recidivism)</p>
+<p>High risk white defendants are 3.61 more likely than low risk white defendants, while High risk black defendants are 2.99 more likely than low.
+–&gt; this could mean that as they overpredicted for blacks they also had more true positives in blacks than in whites.
+–&gt; we critize: where is medium? Ratio is overlooked (how many lows and highs do we have in the races? no absolute numbers). These numbers only help if we now the number of recidivates for low, because the total outcome depends on it (we could calculate that from the data):
+low white: 5 –&gt; high white: 20 | low white: 1 –&gt; high white: 4
+low black: 1 –&gt; high black: 3 | low black: 5 –&gt; high black: 15</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Black High Hazard: </span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.18976</span> <span class="o">+</span> <span class="mf">1.28350</span><span class="p">)))</span> <span class="c1">#race_factorAfrican-American:score_factorHigh  + score_factorHigh in the first output from cell 36</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;White High Hazard: </span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.28350</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Black Medium Hazard: </span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">0.84286</span><span class="o">-</span><span class="mf">0.17261</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;White Medium Hazard: </span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">0.84286</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Black High Hazard: 2.99
+White High Hazard: 3.61
+Black Medium Hazard: 1.95
+White Medium Hazard: 2.32
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span> -w 900 -h 563 -u px
+
+fit &lt;- survfit(f, data=data) #took the survival formula of score_factor
+
+plotty &lt;- function(fit, title) {
+  return(autoplot(fit, conf.int=T, censor=F) + ggtitle(title) + ylim(0,1))
+}
+plotty(fit, &quot;Overall&quot;)
+
+&#39;&#39;&#39;interpretation of the plot:
+after two years about 75% of high score factore have not recidivated, about 50% of 
+Medium score have not recidivated, about 27% of low score have not recidivated&#39;&#39;&#39;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2022-12-30 Compas Analysis_com_jivi_53_0.png" src="_images/2022-12-30 Compas Analysis_com_jivi_53_0.png" />
+</div>
+</div>
+<p>Black defendants do recidivate at higher rates according to race specific Kaplan Meier plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span> -w 900 -h 363 -u px
+white &lt;- filter(data, race == &quot;Caucasian&quot;)
+white_fit &lt;- survfit(f, data=white)
+
+black &lt;- filter(data, race == &quot;African-American&quot;)
+black_fit &lt;- survfit(f, data=black)
+
+grid.arrange(plotty(white_fit, &quot;White defendants&quot;), 
+             plotty(black_fit, &quot;Black defendants&quot;), ncol=2)
+
+&#39;&#39;&#39;interpretation: blacks recidivate more per high, low and medium than whites (fewer do not recidivate per score factor)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2022-12-30 Compas Analysis_com_jivi_55_0.png" src="_images/2022-12-30 Compas Analysis_com_jivi_55_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(fit, times=c(730)) #of overall
+# survival = they did not residivate
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call: survfit(formula = f, data = data)
+
+                score_factor=Low 
+        time       n.risk      n.event      entered     censored     survival 
+    7.30e+02     2.75e+03     1.21e+03     6.74e+03     2.79e+03     7.76e-01 
+     std.err lower 95% CI upper 95% CI 
+    5.74e-03     7.64e-01     7.87e-01 
+
+                score_factor=High 
+        time       n.risk      n.event      entered     censored     survival 
+    7.30e+02     5.05e+02     9.72e+02     6.73e+03     1.26e+03     4.08e-01 
+     std.err lower 95% CI upper 95% CI 
+    1.22e-02     3.85e-01     4.33e-01 
+
+                score_factor=Medium 
+        time       n.risk      n.event      entered     censored     survival 
+    7.30e+02     9.79e+02     1.02e+03     6.74e+03     1.39e+03     5.63e-01 
+     std.err lower 95% CI upper 95% CI 
+    1.03e-02     5.43e-01     5.84e-01 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(black_fit, times=c(730))
+#2.59 e+03 = 2590
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call: survfit(formula = f, data = black)
+
+                score_factor=Low 
+        time       n.risk      n.event      entered     censored     survival 
+    7.30e+02     1.02e+03     5.29e+02     2.59e+03     1.04e+03     7.43e-01 
+     std.err lower 95% CI upper 95% CI 
+    9.70e-03     7.24e-01     7.62e-01 
+
+                score_factor=High 
+        time       n.risk      n.event      entered     censored     survival 
+    7.30e+02     3.62e+02     7.19e+02     2.59e+03     9.14e+02     3.98e-01 
+     std.err lower 95% CI upper 95% CI 
+    1.42e-02     3.71e-01     4.26e-01 
+
+                score_factor=Medium 
+        time       n.risk      n.event      entered     censored     survival 
+    7.30e+02     5.78e+02     6.23e+02     2.59e+03     7.85e+02     5.48e-01 
+     std.err lower 95% CI upper 95% CI 
+    1.34e-02     5.23e-01     5.75e-01 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(white_fit, times=c(730))
+&#39;&#39;&#39;
+survival in medium: 0.576
+--&gt; interpretation: white who survived are in each score factor a little more than blacks (but only by 0.0xx)&#39;&#39;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call: survfit(formula = f, data = white)
+
+                score_factor=Low 
+        time       n.risk      n.event      entered     censored     survival 
+    7.30e+02     1.16e+03     4.57e+02     2.80e+03     1.18e+03     7.95e-01 
+     std.err lower 95% CI upper 95% CI 
+    8.63e-03     7.78e-01     8.12e-01 
+
+                score_factor=High 
+        time       n.risk      n.event      entered     censored     survival 
+    7.30e+02     1.02e+02     1.91e+02     2.69e+03     2.78e+02     4.35e-01 
+     std.err lower 95% CI upper 95% CI 
+    2.72e-02     3.85e-01     4.91e-01 
+
+                score_factor=Medium 
+        time       n.risk      n.event      entered     censored     survival 
+    7.30e+02     2.99e+02     3.06e+02     2.76e+03     4.60e+02     5.76e-01 
+     std.err lower 95% CI upper 95% CI 
+    1.85e-02     5.41e-01     6.13e-01 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Race specific models have similar concordance values.
+‘’’<a class="reference external" href="https://study.com/learn/lesson/concordance-rate-concept-formula.html">https://study.com/learn/lesson/concordance-rate-concept-formula.html</a>
+meaning that if we imagine two pairs of twins (one twin pair is white, one twin pair is black) and each time we have one twin medium and one twin high, the concordance gives wether the prediction for each of the twins to recidivate is better or worse compared to his / her twin</p>
+<p><a class="reference external" href="https://pfeiffertheface.com/what-does-a-50-concordance-rate-mean/">https://pfeiffertheface.com/what-does-a-50-concordance-rate-mean/</a>
+–&gt; so both concordance rates are higher than 0.61 which means good</p>
+<p>“The concordance is dened P(xi &gt; xj |yi &gt; yj ),
+the probability that the prediction x goes in the same direction as the actual data y. A pair of
+observations i, j is considered concordant if the prediction and the data go in the same direction,
+i.e., (yi &gt; yj , xi &gt; xj ) or (yi &lt; yj , xi &lt; xj ). The concordance is the fraction of concordant pairs.” (Sofi has source)
+‘’’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(coxph(f, data=white))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+coxph(formula = f, data = white)
+
+  n= 4564, number of events= 1023 
+
+                      coef exp(coef) se(coef)     z Pr(&gt;|z|)    
+score_factorHigh   1.27628   3.58327  0.08365 15.26   &lt;2e-16 ***
+score_factorMedium 0.83965   2.31556  0.07144 11.75   &lt;2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+                   exp(coef) exp(-coef) lower .95 upper .95
+score_factorHigh       3.583     0.2791     3.041     4.222
+score_factorMedium     2.316     0.4319     2.013     2.664
+
+Concordance= 0.625  (se = 0.007 )
+Rsquare= 0.056   (max possible= 0.971 )
+Likelihood ratio test= 262.8  on 2 df,   p=0
+Wald test            = 282.2  on 2 df,   p=0
+Score (logrank) test = 311.7  on 2 df,   p=0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(coxph(f, data=black))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+coxph(formula = f, data = black)
+
+  n= 6862, number of events= 2035 
+
+                      coef exp(coef) se(coef)     z Pr(&gt;|z|)    
+score_factorHigh   1.09514   2.98959  0.05475 20.00   &lt;2e-16 ***
+score_factorMedium 0.67025   1.95473  0.05636 11.89   &lt;2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+                   exp(coef) exp(-coef) lower .95 upper .95
+score_factorHigh       2.990     0.3345     2.685     3.328
+score_factorMedium     1.955     0.5116     1.750     2.183
+
+Concordance= 0.623  (se = 0.006 )
+Rsquare= 0.059   (max possible= 0.992 )
+Likelihood ratio test= 416.9  on 2 df,   p=0
+Wald test            = 401.3  on 2 df,   p=0
+Score (logrank) test = 432.9  on 2 df,   p=0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compas’s violent recidivism score has a slightly higher overall concordance score of 65.1%.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+violent_data &lt;- filter(filter(read.csv(&quot;./cox-violent-parsed.csv&quot;), score_text != &quot;N/A&quot;), end &gt; start) %&gt;% 
+# how do cox and raw data differ?
+        mutate(race_factor = factor(race,
+                                  labels = c(&quot;African-American&quot;, 
+                                             &quot;Asian&quot;,
+                                             &quot;Caucasian&quot;, 
+                                             &quot;Hispanic&quot;, 
+                                             &quot;Native American&quot;,
+                                             &quot;Other&quot;))) %&gt;%
+        within(race_factor &lt;- relevel(race_factor, ref = 3)) %&gt;%
+        mutate(score_factor = factor(score_text)) %&gt;%
+        within(score_factor &lt;- relevel(score_factor, ref=2))
+
+
+vf &lt;- Surv(start, end, event, type=&quot;counting&quot;) ~ score_factor
+vmodel &lt;- coxph(vf, data=violent_data)
+vgrp &lt;- violent_data[!duplicated(violent_data$id),]
+print(nrow(vgrp))
+summary(vmodel)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 10985
+Call:
+coxph(formula = vf, data = violent_data)
+
+  n= 18178, number of events= 818 
+
+                      coef exp(coef) se(coef)      z Pr(&gt;|z|)    
+score_factorHigh   1.38311   3.98729  0.08410 16.447   &lt;2e-16 ***
+score_factorMedium 0.80350   2.23334  0.08699  9.236   &lt;2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+                   exp(coef) exp(-coef) lower .95 upper .95
+score_factorHigh       3.987     0.2508     3.381     4.702
+score_factorMedium     2.233     0.4478     1.883     2.649
+
+Concordance= 0.651  (se = 0.009 )
+Rsquare= 0.015   (max possible= 0.556 )
+Likelihood ratio test= 270.6  on 2 df,   p=0
+Wald test            = 272.2  on 2 df,   p=0
+Score (logrank) test = 307.9  on 2 df,   p=0
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case, there isn’t a significant coefficient on African American’s with High Scores.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+vf2 &lt;- Surv(start, end, event, type=&quot;counting&quot;) ~ race_factor + race_factor * score_factor
+vmodel &lt;- coxph(vf2, data=violent_data)
+summary(vmodel)
+
+#for african american with high score it&#39;s: 0.970513 --&gt; we can&#39;t analyse the model ??
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+coxph(formula = vf2, data = violent_data)
+
+  n= 18178, number of events= 818 
+
+                                                     coef  exp(coef)   se(coef)
+race_factorAfrican-American                     1.976e-01  1.219e+00  1.321e-01
+race_factorAsian                               -5.838e-01  5.577e-01  1.005e+00
+race_factorHispanic                            -1.754e-01  8.391e-01  2.150e-01
+race_factorNative American                     -1.304e+01  2.162e-06  7.607e+02
+race_factorOther                               -4.459e-02  9.564e-01  2.433e-01
+score_factorHigh                                1.250e+00  3.491e+00  1.720e-01
+score_factorMedium                              6.292e-01  1.876e+00  1.583e-01
+race_factorAfrican-American:score_factorHigh   -7.627e-03  9.924e-01  2.063e-01
+race_factorAsian:score_factorHigh               1.552e+00  4.721e+00  1.425e+00
+race_factorHispanic:score_factorHigh            1.606e-01  1.174e+00  3.969e-01
+race_factorNative American:score_factorHigh     1.465e+01  2.307e+06  7.607e+02
+race_factorOther:score_factorHigh               1.440e+00  4.220e+00  4.037e-01
+race_factorAfrican-American:score_factorMedium  1.297e-01  1.139e+00  1.987e-01
+race_factorAsian:score_factorMedium             1.651e+00  5.211e+00  1.235e+00
+race_factorHispanic:score_factorMedium          4.632e-01  1.589e+00  3.430e-01
+race_factorNative American:score_factorMedium   1.343e+01  6.782e+05  7.607e+02
+race_factorOther:score_factorMedium            -1.562e-02  9.845e-01  4.916e-01
+                                                    z Pr(&gt;|z|)    
+race_factorAfrican-American                     1.497 0.134487    
+race_factorAsian                               -0.581 0.561115    
+race_factorHispanic                            -0.816 0.414623    
+race_factorNative American                     -0.017 0.986318    
+race_factorOther                               -0.183 0.854546    
+score_factorHigh                                7.268 3.64e-13 ***
+score_factorMedium                              3.976 7.02e-05 ***
+race_factorAfrican-American:score_factorHigh   -0.037 0.970513    
+race_factorAsian:score_factorHigh               1.089 0.275997    
+race_factorHispanic:score_factorHigh            0.405 0.685751    
+race_factorNative American:score_factorHigh     0.019 0.984633    
+race_factorOther:score_factorHigh               3.567 0.000361 ***
+race_factorAfrican-American:score_factorMedium  0.653 0.513889    
+race_factorAsian:score_factorMedium             1.337 0.181322    
+race_factorHispanic:score_factorMedium          1.350 0.176860    
+race_factorNative American:score_factorMedium   0.018 0.985917    
+race_factorOther:score_factorMedium            -0.032 0.974652    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+                                               exp(coef) exp(-coef) lower .95
+race_factorAfrican-American                    1.219e+00  8.207e-01   0.94065
+race_factorAsian                               5.577e-01  1.793e+00   0.07786
+race_factorHispanic                            8.391e-01  1.192e+00   0.55062
+race_factorNative American                     2.162e-06  4.625e+05   0.00000
+race_factorOther                               9.564e-01  1.046e+00   0.59370
+score_factorHigh                               3.491e+00  2.865e-01   2.49195
+score_factorMedium                             1.876e+00  5.330e-01   1.37575
+race_factorAfrican-American:score_factorHigh   9.924e-01  1.008e+00   0.66232
+race_factorAsian:score_factorHigh              4.721e+00  2.118e-01   0.28928
+race_factorHispanic:score_factorHigh           1.174e+00  8.516e-01   0.53939
+race_factorNative American:score_factorHigh    2.307e+06  4.334e-07   0.00000
+race_factorOther:score_factorHigh              4.220e+00  2.369e-01   1.91314
+race_factorAfrican-American:score_factorMedium 1.139e+00  8.783e-01   0.77125
+race_factorAsian:score_factorMedium            5.211e+00  1.919e-01   0.46315
+race_factorHispanic:score_factorMedium         1.589e+00  6.293e-01   0.81136
+race_factorNative American:score_factorMedium  6.782e+05  1.474e-06   0.00000
+race_factorOther:score_factorMedium            9.845e-01  1.016e+00   0.37560
+                                               upper .95
+race_factorAfrican-American                        1.578
+race_factorAsian                                   3.995
+race_factorHispanic                                1.279
+race_factorNative American                           Inf
+race_factorOther                                   1.541
+score_factorHigh                                   4.891
+score_factorMedium                                 2.558
+race_factorAfrican-American:score_factorHigh       1.487
+race_factorAsian:score_factorHigh                 77.045
+race_factorHispanic:score_factorHigh               2.556
+race_factorNative American:score_factorHigh          Inf
+race_factorOther:score_factorHigh                  9.310
+race_factorAfrican-American:score_factorMedium     1.681
+race_factorAsian:score_factorMedium               58.627
+race_factorHispanic:score_factorMedium             3.113
+race_factorNative American:score_factorMedium        Inf
+race_factorOther:score_factorMedium                2.581
+
+Concordance= 0.663  (se = 0.01 )
+Rsquare= 0.017   (max possible= 0.556 )
+Likelihood ratio test= 303  on 17 df,   p=0
+Wald test            = 317.9  on 17 df,   p=0
+Score (logrank) test = 387.1  on 17 df,   p=0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(coxph(vf, data=filter(violent_data, race == &quot;African-American&quot;)))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+coxph(formula = vf, data = filter(violent_data, race == &quot;African-American&quot;))
+
+  n= 9712, number of events= 495 
+
+                     coef exp(coef) se(coef)      z Pr(&gt;|z|)    
+score_factorHigh   1.2412    3.4596   0.1140 10.891  &lt; 2e-16 ***
+score_factorMedium 0.7589    2.1359   0.1202  6.315 2.71e-10 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+                   exp(coef) exp(-coef) lower .95 upper .95
+score_factorHigh       3.460     0.2891     2.767     4.325
+score_factorMedium     2.136     0.4682     1.688     2.703
+
+Concordance= 0.638  (se = 0.012 )
+Rsquare= 0.013   (max possible= 0.571 )
+Likelihood ratio test= 127.5  on 2 df,   p=0
+Wald test            = 118.7  on 2 df,   p=0
+Score (logrank) test = 130.9  on 2 df,   p=0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(coxph(vf, data=filter(violent_data, race == &quot;Caucasian&quot;)))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+coxph(formula = vf, data = filter(violent_data, race == &quot;Caucasian&quot;))
+
+  n= 6041, number of events= 221 
+
+                     coef exp(coef) se(coef)     z Pr(&gt;|z|)    
+score_factorHigh   1.2502    3.4909   0.1720 7.267 3.66e-13 ***
+score_factorMedium 0.6310    1.8794   0.1583 3.986 6.71e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+                   exp(coef) exp(-coef) lower .95 upper .95
+score_factorHigh       3.491     0.2865     2.492     4.891
+score_factorMedium     1.879     0.5321     1.378     2.563
+
+Concordance= 0.61  (se = 0.016 )
+Rsquare= 0.008   (max possible= 0.444 )
+Likelihood ratio test= 49.63  on 2 df,   p=1.672e-11
+Wald test            = 55.48  on 2 df,   p=8.973e-13
+Score (logrank) test = 61.24  on 2 df,   p=5.018e-14
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span> -w 900 -h 363 -u px
+white &lt;- filter(violent_data, race == &quot;Caucasian&quot;)
+white_fit &lt;- survfit(vf, data=white)
+
+black &lt;- filter(violent_data, race == &quot;African-American&quot;)
+black_fit &lt;- survfit(vf, data=black)
+
+grid.arrange(plotty(white_fit, &quot;White defendants&quot;), 
+             plotty(black_fit, &quot;Black defendants&quot;), ncol=2)
+
+#what does the coloured area around the line mean? variation? If so, the variation is lower for blacks than for whites
+&#39;&#39;&#39;does it show prediction or data (reality)? vf is formula, so it should show the data and not the prediction. But
+its an estimation. How can they make an estimation, if they dont predict????&#39;&#39;&#39;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2022-12-30 Compas Analysis_com_jivi_68_0.png" src="_images/2022-12-30 Compas Analysis_com_jivi_68_0.png" />
+</div>
+</div>
+</section>
+<section id="directions-of-the-racial-bias">
+<h2>Directions of the Racial Bias<a class="headerlink" href="#directions-of-the-racial-bias" title="Permalink to this headline">#</a></h2>
+<p>The above analysis shows that the Compas algorithm does overpredict African-American defendant’s future recidivism, but we haven’t yet explored the direction of the bias. We can discover fine differences in overprediction and underprediction by comparing Compas scores across racial lines.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">truth_tables</span> <span class="kn">import</span> <span class="n">PeekyReader</span><span class="p">,</span> <span class="n">Person</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">is_race</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">vtable</span><span class="p">,</span> <span class="n">hightable</span><span class="p">,</span> <span class="n">vhightable</span> <span class="c1">#import classes and definitions from his own py</span>
+<span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">DictReader</span>
+
+<span class="n">people</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#create a new dataframe with the lenght of cox-parsed</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./cox-parsed.csv&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">PeekyReader</span><span class="p">(</span><span class="n">DictReader</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span> 
+            <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">valid</span><span class="p">:</span>
+                <span class="n">people</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="n">pop</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="p">((</span><span class="n">i</span><span class="o">.</span><span class="n">recidivist</span> <span class="o">==</span> <span class="kc">True</span> <span class="ow">and</span> <span class="n">i</span><span class="o">.</span><span class="n">lifetime</span> <span class="o">&lt;=</span> <span class="mi">730</span><span class="p">)</span> <span class="ow">or</span>
+                              <span class="n">i</span><span class="o">.</span><span class="n">lifetime</span> <span class="o">&gt;</span> <span class="mi">730</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">score_valid</span><span class="p">,</span> <span class="n">people</span><span class="p">))))</span> <span class="c1"># total prisoner populatio within two years</span>
+<span class="c1">#either they recidivated before date X or it&#39;s date X they are included ??</span>
+<span class="c1">#https://www.w3schools.com/python/python_lambda.asp</span>
+<span class="c1"># what does score_valid mean?</span>
+<span class="n">recid</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">.</span><span class="n">recidivist</span> <span class="o">==</span> <span class="kc">True</span> <span class="ow">and</span> <span class="n">i</span><span class="o">.</span><span class="n">lifetime</span> <span class="o">&lt;=</span> <span class="mi">730</span><span class="p">,</span> <span class="n">pop</span><span class="p">))</span> <span class="c1">#pop filtered by recidivists </span>
+<span class="n">rset</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">recid</span><span class="p">)</span> <span class="c1"># makes it a diffrent data type: collection of data which is unordered, unchangeable*, and unindexed.</span>
+<span class="n">surv</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pop</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">rset</span><span class="p">]</span> <span class="c1">#all the people from pop who aren&#39;t recidivists</span>
+
+<span class="c1">#http://localhost:8888/edit/1-%20Data%20Science%20project/data/truth_tables.py</span>
+<span class="sd">&#39;&#39;&#39;they duplicate the data without premutating or bootsstrapping&#39;&#39;&#39;</span>
+<span class="c1"># its the sames as: def create_two_year_files():</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All defendants&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">recid</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">surv</span><span class="p">))</span> <span class="c1">#counting definition defined in truth_tables.py</span>
+<span class="c1">#we assume: medium is in high</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All defendants
+           	Low	High
+Survived   	2681	1282	0.55
+Recidivated	1216	2035	0.45
+Total: 7214.00
+False positive rate: 32.35
+False negative rate: 37.40
+Specificity: 0.68
+Sensitivity: 0.63
+Prevalence: 0.45
+PPV: 0.61
+NPV: 0.69
+LR+: 1.94
+LR-: 0.55
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total pop: </span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">2681</span> <span class="o">+</span> <span class="mi">1282</span> <span class="o">+</span> <span class="mi">1216</span> <span class="o">+</span> <span class="mi">2035</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total pop: 7214
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statistics</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average followup time </span><span class="si">%.2f</span><span class="s2"> (sd </span><span class="si">%.2f</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">.</span><span class="n">lifetime</span><span class="p">,</span> <span class="n">pop</span><span class="p">)),</span>
+                                                <span class="n">statistics</span><span class="o">.</span><span class="n">stdev</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">.</span><span class="n">lifetime</span><span class="p">,</span> <span class="n">pop</span><span class="p">))))</span> 
+<span class="sd">&#39;&#39;&#39;In article it sattes: Starting with the database of COMPAS scores, we built a profile of each person’s criminal history, </span>
+<span class="sd">both before and after they were scored. We collected public criminal records from the Broward County Clerk’s Office website</span>
+<span class="sd">through April 1, 2016. On average, defendants in our dataset were not incarcerated for 622.87 days (sd: 329.19).&#39;&#39;&#39;</span>
+<span class="c1">#= time when they were not incarenated. Is it the time between their first prison time and their recidivism?</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Median followup time </span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">statistics</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">.</span><span class="n">lifetime</span><span class="p">,</span> <span class="n">pop</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average followup time 622.87 (sd 392.19)
+Median followup time 766
+</pre></div>
+</div>
+</div>
+</div>
+<p>Overall, the false positive rate is 32.35%.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Black defendants&quot;</span><span class="p">)</span>
+<span class="n">is_afam</span> <span class="o">=</span> <span class="n">is_race</span><span class="p">(</span><span class="s2">&quot;African-American&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_afam</span><span class="p">,</span> <span class="n">recid</span><span class="p">)),</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_afam</span><span class="p">,</span> <span class="n">surv</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Black defendants
+           	Low	High
+Survived   	990	805	0.49
+Recidivated	532	1369	0.51
+Total: 3696.00
+False positive rate: 44.85
+False negative rate: 27.99
+Specificity: 0.55
+Sensitivity: 0.72
+Prevalence: 0.51
+PPV: 0.63
+NPV: 0.65
+LR+: 1.61
+LR-: 0.51
+</pre></div>
+</div>
+</div>
+</div>
+<p>That number is higher for African Americans at 44.85%.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;White defendants&quot;</span><span class="p">)</span>
+<span class="n">is_white</span> <span class="o">=</span> <span class="n">is_race</span><span class="p">(</span><span class="s2">&quot;Caucasian&quot;</span><span class="p">)</span>
+<span class="n">table</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_white</span><span class="p">,</span> <span class="n">recid</span><span class="p">)),</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_white</span><span class="p">,</span> <span class="n">surv</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>White defendants
+           	Low	High
+Survived   	1139	349	0.61
+Recidivated	461	505	0.39
+Total: 2454.00
+False positive rate: 23.45
+False negative rate: 47.72
+Specificity: 0.77
+Sensitivity: 0.52
+Prevalence: 0.39
+PPV: 0.59
+NPV: 0.71
+LR+: 2.23
+LR-: 0.62
+</pre></div>
+</div>
+</div>
+</div>
+<p>And lower for whites at 23.45%.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">44.85</span> <span class="o">/</span> <span class="mf">23.45</span> <span class="c1">#devide fp rates of blacks by whites</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.9125799573560769
+</pre></div>
+</div>
+</div>
+</div>
+<p>Which means under COMPAS black defendants are 91% more likely to get a higher score and not go on to commit more crimes than white defendants after two year.</p>
+<p>COMPAS scores misclassify white reoffenders as low risk at 70.4% more often than black reoffenders.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">47.72</span> <span class="o">/</span> <span class="mf">27.99</span> <span class="c1">#devide fn rates of blacks by whites</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.7048946052161487
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hightable</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_white</span><span class="p">,</span> <span class="n">recid</span><span class="p">)),</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_white</span><span class="p">,</span> <span class="n">surv</span><span class="p">)))</span> <span class="c1">#here they have medium in low</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           	Low	High
+Survived   	1407	81	0.61
+Recidivated	771	195	0.39
+Total: 2454.00
+False positive rate: 5.44
+False negative rate: 79.81
+Specificity: 0.95
+Sensitivity: 0.20
+Prevalence: 0.39
+PPV: 0.71
+NPV: 0.65
+LR+: 3.71
+LR-: 0.84
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hightable</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_afam</span><span class="p">,</span> <span class="n">recid</span><span class="p">)),</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_afam</span><span class="p">,</span> <span class="n">surv</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           	Low	High
+Survived   	1511	284	0.49
+Recidivated	1160	741	0.51
+Total: 3696.00
+False positive rate: 15.82
+False negative rate: 61.02
+Specificity: 0.84
+Sensitivity: 0.39
+Prevalence: 0.51
+PPV: 0.72
+NPV: 0.57
+LR+: 2.46
+LR-: 0.72
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;interpretation:</span>
+<span class="sd">fp: high and they didnt recidivate --&gt; </span>
+<span class="sd">fn: low / medium and they did recidivate</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fn relation &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">61</span><span class="o">/</span><span class="mi">80</span><span class="p">))</span> <span class="c1"># blacks are less likely to be labeld low / medium and do recidivate</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fp relation &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">16</span><span class="o">/</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># blacks are 3 times more likely to be labeld as high even thought they dont recidivate</span>
+
+<span class="c1">#blacks are put in high scores more often making it fn rate go down for them and fp go up</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fn relation 0.7625
+fp relation 3.2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>Risk of Violent Recidivism<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Compas also offers a score that aims to measure a persons risk of violent recidivism, which has a similar overall accuracy to the Recidivism score.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vpeople</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./cox-violent-parsed.csv&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">PeekyReader</span><span class="p">(</span><span class="n">DictReader</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">valid</span><span class="p">:</span>
+                <span class="n">vpeople</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="n">vpop</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="p">((</span><span class="n">i</span><span class="o">.</span><span class="n">violent_recidivist</span> <span class="o">==</span> <span class="kc">True</span> <span class="ow">and</span> <span class="n">i</span><span class="o">.</span><span class="n">lifetime</span> <span class="o">&lt;=</span> <span class="mi">730</span><span class="p">)</span> <span class="ow">or</span>
+                              <span class="n">i</span><span class="o">.</span><span class="n">lifetime</span> <span class="o">&gt;</span> <span class="mi">730</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">vscore_valid</span><span class="p">,</span> <span class="n">vpeople</span><span class="p">))))</span>
+<span class="n">vrecid</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span><span class="o">.</span><span class="n">violent_recidivist</span> <span class="o">==</span> <span class="kc">True</span> <span class="ow">and</span> <span class="n">i</span><span class="o">.</span><span class="n">lifetime</span> <span class="o">&lt;=</span> <span class="mi">730</span><span class="p">,</span> <span class="n">vpeople</span><span class="p">))</span>
+<span class="n">vrset</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">vrecid</span><span class="p">)</span>
+<span class="n">vsurv</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">vpop</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">vrset</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All defendants&quot;</span><span class="p">)</span>
+<span class="n">vtable</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">vrecid</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">vsurv</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All defendants
+           	Low	High
+Survived   	4121	1597	0.89
+Recidivated	347	389	0.11
+Total: 6454.00
+False positive rate: 27.93
+False negative rate: 47.15
+Specificity: 0.72
+Sensitivity: 0.53
+Prevalence: 0.11
+PPV: 0.20
+NPV: 0.92
+LR+: 1.89
+LR-: 0.65
+</pre></div>
+</div>
+</div>
+</div>
+<p>Even moreso for Black defendants.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Black defendants&quot;</span><span class="p">)</span>
+<span class="n">is_afam</span> <span class="o">=</span> <span class="n">is_race</span><span class="p">(</span><span class="s2">&quot;African-American&quot;</span><span class="p">)</span>
+<span class="n">vtable</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_afam</span><span class="p">,</span> <span class="n">vrecid</span><span class="p">)),</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_afam</span><span class="p">,</span> <span class="n">vsurv</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Black defendants
+           	Low	High
+Survived   	1692	1043	0.86
+Recidivated	170	273	0.14
+Total: 3178.00
+False positive rate: 38.14
+False negative rate: 38.37
+Specificity: 0.62
+Sensitivity: 0.62
+Prevalence: 0.14
+PPV: 0.21
+NPV: 0.91
+LR+: 1.62
+LR-: 0.62
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;White defendants&quot;</span><span class="p">)</span>
+<span class="n">is_white</span> <span class="o">=</span> <span class="n">is_race</span><span class="p">(</span><span class="s2">&quot;Caucasian&quot;</span><span class="p">)</span>
+<span class="n">vtable</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_white</span><span class="p">,</span> <span class="n">vrecid</span><span class="p">)),</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_white</span><span class="p">,</span> <span class="n">vsurv</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>White defendants
+           	Low	High
+Survived   	1679	380	0.91
+Recidivated	129	77	0.09
+Total: 2265.00
+False positive rate: 18.46
+False negative rate: 62.62
+Specificity: 0.82
+Sensitivity: 0.37
+Prevalence: 0.09
+PPV: 0.17
+NPV: 0.93
+LR+: 2.03
+LR-: 0.77
+</pre></div>
+</div>
+</div>
+</div>
+<p>Black defendants are twice as likely to be false positives for a Higher violent score than white defendants.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">38.14</span> <span class="o">/</span> <span class="mf">18.46</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.066088840736728
+</pre></div>
+</div>
+</div>
+</div>
+<p>White defendants are 63% more likely to get a lower score and commit another crime than Black defendants.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">62.62</span> <span class="o">/</span> <span class="mf">38.37</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.63200416992442
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gender-differences-in-compas-scores">
+<h2>Gender differences in Compas scores<a class="headerlink" href="#gender-differences-in-compas-scores" title="Permalink to this headline">#</a></h2>
+<p>In terms of underlying recidivism rates, we can look at gender specific Kaplan Meier estimates. There is a striking difference between women and men.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+
+female &lt;- filter(data, sex == &quot;Female&quot;)
+male   &lt;- filter(data, sex == &quot;Male&quot;)
+male_fit &lt;- survfit(f, data=male)
+female_fit &lt;- survfit(f, data=female)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(male_fit, times=c(730))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call: survfit(formula = f, data = male)
+
+                score_factor=Low 
+        time       n.risk      n.event      entered     censored     survival 
+    7.30e+02     2.13e+03     1.02e+03     5.32e+03     2.18e+03     7.58e-01 
+     std.err lower 95% CI upper 95% CI 
+    6.67e-03     7.45e-01     7.71e-01 
+
+                score_factor=High 
+        time       n.risk      n.event      entered     censored     survival 
+     730.000      421.000      857.000     5307.000     1047.000        0.388 
+     std.err lower 95% CI upper 95% CI 
+       0.013        0.363        0.414 
+
+                score_factor=Medium 
+        time       n.risk      n.event      entered     censored     survival 
+    7.30e+02     7.52e+02     8.38e+02     5.31e+03     1.06e+03     5.35e-01 
+     std.err lower 95% CI upper 95% CI 
+    1.18e-02     5.13e-01     5.59e-01 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span>
+summary(female_fit, times=c(730))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call: survfit(formula = f, data = female)
+
+                score_factor=Low 
+        time       n.risk      n.event      entered     censored     survival 
+    7.30e+02     6.17e+02     1.94e+02     1.42e+03     6.14e+02     8.38e-01 
+     std.err lower 95% CI upper 95% CI 
+    1.07e-02     8.17e-01     8.59e-01 
+
+                score_factor=High 
+        time       n.risk      n.event      entered     censored     survival 
+    7.30e+02     8.40e+01     1.15e+02     1.39e+03     2.09e+02     5.25e-01 
+     std.err lower 95% CI upper 95% CI 
+    3.25e-02     4.65e-01     5.93e-01 
+
+                score_factor=Medium 
+        time       n.risk      n.event      entered     censored     survival 
+    7.30e+02     2.27e+02     1.84e+02     1.41e+03     3.33e+02     6.59e-01 
+     std.err lower 95% CI upper 95% CI 
+    2.06e-02     6.19e-01     7.00e-01 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">R</span> -w 900 -h 363 -u px
+grid.arrange(plotty(female_fit, &quot;Female&quot;), plotty(male_fit, &quot;Male&quot;),ncol=2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2022-12-30 Compas Analysis_com_jivi_100_0.png" src="_images/2022-12-30 Compas Analysis_com_jivi_100_0.png" />
+</div>
+</div>
+<p>As these plots show, the Compas score treats a High risk women the same as a Medium risk man.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Group 3<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
