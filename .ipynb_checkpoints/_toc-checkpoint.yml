@@ -16,7 +16,7 @@ parts:
     - file: critisms
   - caption: Analysis of COMPAS fairness
     chapters:
-    - file: notebooks
+    - file: recidivism_final
   - caption: Acknowledgements
     chapters:
     - file: references
