@@ -1,0 +1,5 @@
+# Final Conclusion
+
+As previously mentioned, the performance of a machine learning model is largely dependent on the quality of the data used to train it. In the case of recidivism prediction, the higher base rate of African-Americans (52%) compared to other races (39%) results in different error rates between the two groups. If the recidivism rate is the same within each risk category, regardless of race, then a higher proportion of black defendants will be classified as high risk, even if they do not reoffend. This leads to a higher False Positive Rate (FPR) for black defendants. The COMPAS algorithm is therefore biased, but this is a result of the systemic racism and social conditions that impact the data used to train the models.
+
+It is crucial to be mindful of the limitations of machine learning methods when making decisions that could greatly impact a person's future. Algorithms can provide valuable insights, but they are simply a reflection of the current system. As humans, it is our responsibility to work towards creating a better and more equitable reality.
