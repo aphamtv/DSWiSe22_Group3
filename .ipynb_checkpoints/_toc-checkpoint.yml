@@ -18,11 +18,9 @@ parts:
     chapters:
     - file: eda
     - file: reproduction
-  - caption: Recidivism Classification Models
+  - caption: Recidivism Models & Fairness
     chapters:
     - file: classification
-  - caption: Discussion & Conclusion
-    chapters:
     - file: further_discussion
     - file: conclusion
   - caption: Acknowledgements

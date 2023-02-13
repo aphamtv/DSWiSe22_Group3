@@ -52,8 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="References" href="references.html" />
-    <link rel="prev" title="COMPAS Critisms" href="critisms.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -115,7 +113,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Background
+  COMPAS Background
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -124,21 +122,50 @@ const thebe_selector_output = ".output, .cell_output"
    COMPAS Algorithm
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="critisms.html">
-   COMPAS Critisms
-  </a>
- </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Analysis of COMPAS fairness
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Examining the Predictive Fairness of Recidivism Models
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="eda.html">
+   Exploratory Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reproduction.html">
+   Replicating the Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Recidivism Classification Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification.html">
+   Recidivism Classification
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Discussion &amp; Conclusion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="further_discussion.html">
+   Further Discussion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conclusion.html">
+   Final Conclusion
   </a>
  </li>
 </ul>
@@ -386,8 +413,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recidism-classification">
-   Recidism Classification
+  <a class="reference internal nav-link" href="#recidivism-classification">
+   Recidivism Classification
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -601,8 +628,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recidism-classification">
-   Recidism Classification
+  <a class="reference internal nav-link" href="#recidivism-classification">
+   Recidivism Classification
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -1666,8 +1693,8 @@ two_year_recid                                                    0.6859      0.
 <p>Northpointe has “fair”, meaning similar, population errors, and therefore the FPR (model error) will be higher for black people.</p>
 </section>
 </section>
-<section id="recidism-classification">
-<h2>Recidism Classification<a class="headerlink" href="#recidism-classification" title="Permalink to this headline">#</a></h2>
+<section id="recidivism-classification">
+<h2>Recidivism Classification<a class="headerlink" href="#recidivism-classification" title="Permalink to this headline">#</a></h2>
 <section id="processing-data">
 <h3>Processing Data<a class="headerlink" href="#processing-data" title="Permalink to this headline">#</a></h3>
 <p>Our hypothesis focuses on the predictability of recidivism based on simple factors, therefore, we only use a subset of the features available in the dataset. The selected features include ‘sex’, ‘age’, ‘race’, ‘priors_count’, and ‘c_charge_degree’, which will be used to predict the two-year recidivism. These features were chosen based on their simplicity and potential impact on recidivism, and represent a mix of demographic and criminal history information.”</p>
@@ -3327,20 +3354,6 @@ Slundberg/shap · GitHub<br></p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="critisms.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">COMPAS Critisms</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="references.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">References</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

@@ -675,7 +675,7 @@ plt.show()
 # 
 # Northpointe has "fair", meaning similar, population errors, and therefore the FPR (model error) will be higher for black people.
 
-# ## Recidism Classification
+# ## Recidivism Classification
 
 # ### Processing Data
 
@@ -1363,3 +1363,9 @@ mf_list[0].plot(mf_list[1:],type = 'heatmap')
 # Molnar, Christoph (2022): Interpretable Machine Learning: A Guide for Making Black Box Models Explainable. Retrieved January 12, 2023, from  https://christophm.github.io/interpretable-ml-book/feature-importance.html
 # 
 # Lundberg, S. (2020, December 18). Welcome to the SHAP documentation Retrieved from https://github.com/slundberg/shap/blob/master/docs/index.rst
+
+# In[ ]:
+
+
+
+
