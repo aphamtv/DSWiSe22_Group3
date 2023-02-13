@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Recidivism Classification
+# # Recidivism Classification Models
 
 # In this part, we aim to answer the question of whether recidivism can be predicted based on simple factors such as age, gender, race, and prior history of recidivism. We also compare the performance of a more complex tree-based statistical model with a simpler logistic regression model.
 
