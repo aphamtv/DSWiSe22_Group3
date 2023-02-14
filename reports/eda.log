@@ -17,14 +17,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-df['two_year_recid'].value_counts()
+compas_df['race'].value_counts().plot(
+    title = "Defendants by Race Distribution",
+    kind= "barh", 
+    color = "#f17775")
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn [9], line 1[0m
-[0;32m----> 1[0m df[[38;5;124m'[39m[38;5;124mtwo_year_recid[39m[38;5;124m'[39m][38;5;241m.[39mvalue_counts()
+Cell [0;32mIn [4], line 1[0m
+[0;32m----> 1[0m compas_df[[38;5;124m'[39m[38;5;124mrace[39m[38;5;124m'[39m][38;5;241m.[39mvalue_counts()[38;5;241m.[39mplot(
+[1;32m      2[0m     title [38;5;241m=[39m [38;5;124m"[39m[38;5;124mDefendants by Race Distribution[39m[38;5;124m"[39m,
+[1;32m      3[0m     kind[38;5;241m=[39m [38;5;124m"[39m[38;5;124mbarh[39m[38;5;124m"[39m, 
+[1;32m      4[0m     color [38;5;241m=[39m [38;5;124m"[39m[38;5;124m#f17775[39m[38;5;124m"[39m)
 
-[0;31mNameError[0m: name 'df' is not defined
-NameError: name 'df' is not defined
+[0;31mNameError[0m: name 'compas_df' is not defined
+NameError: name 'compas_df' is not defined
 
