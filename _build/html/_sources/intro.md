@@ -19,13 +19,13 @@ Replicate some COMPAS criticisms
 :::
 
 :::{grid-item-card} 3. Recidivism or Not?
-:link: https://aphamtv.github.io/DSWiSe22_Group3/reproduction.html
+:link: https://aphamtv.github.io/DSWiSe22_Group3/classification.html
 :link-type: url
 Can we fairly predict recidivism with simple features and a simple model?
 :::
 
 :::{grid-item-card} 4. Fair or Not?
-:link: https://aphamtv.github.io/DSWiSe22_Group3/reproduction.html
+:link: https://aphamtv.github.io/DSWiSe22_Group3/conclusion.html
 :link-type: url
 
 Our Final Conclusions

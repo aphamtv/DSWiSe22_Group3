@@ -129,17 +129,11 @@ print("Sex Distribution of Defendants")
 print(table)
 
 
-# In[10]:
-
-
-df['two_year_recid'].value_counts()
-
-
 # ### Age Variable
 
 # Histogram shows that most of the defendants in the COMPAS data are between the ages of 25 and 35, with a concentration of ages towards the younger end of this range. This type of distribution can indicate that the population of defendants in the COMPAS data is relatively young, with fewer older defendants. 
 
-# In[90]:
+# In[10]:
 
 
 plt.hist(compas_df['age'], bins=20, color='#ffab40')
@@ -151,7 +145,7 @@ plt.show()
 
 # Given that African American and Caucasian groups are the predominant populations in our dataset, we will analyze age distributions within these two populations to gain a deeper understanding of their demographic structures.
 
-# In[25]:
+# In[11]:
 
 
 # to customize the histogram color
@@ -165,7 +159,7 @@ def hist_color(color_code_start, color_code_end, n):
     return color_codes
 
 
-# In[68]:
+# In[12]:
 
 
 min_age = int(compas_df['age'].min())
@@ -185,7 +179,7 @@ compas_df[compas_df['race'].isin(["African-American","Caucasian"])].groupby('rac
 
 # Next, we examine the distribution of COMPAS decile scores across different racial groups in relation to recidivism.
 
-# In[8]:
+# In[13]:
 
 
 score_text_by_race = compas_df.groupby(['race','score_text'], sort = True)['id'].size()
@@ -202,7 +196,7 @@ score_text_by_race.unstack().sort_values(by="race", ascending=False).plot(
 
 # African American defendants have the highest number of individuals classified with high scores. However, it is important to consider that African Americans make up the largest racial group in this dataset, representing 51.442% of the total. To better understand the distribution of decile scores among different racial groups, we plotted the histogram as below. The chart eveals a noticeable pattern. As the decile score increases, the proportion of defendants from both the Caucasian and 'Other' racial groups decreases. However, this trend is not observed in the African American group, where the proportion of defendants remains relatively stable across different decile scores.
 
-# In[72]:
+# In[14]:
 
 
 compas_df.groupby('race')['decile_score'].value_counts(normalize = False).unstack().plot(
@@ -215,7 +209,7 @@ compas_df.groupby('race')['decile_score'].value_counts(normalize = False).unstac
 
 # ### Priors_Count Variable
 
-# In[62]:
+# In[15]:
 
 
 plt.hist(compas_df['priors_count'], bins=20, color='#016d8c')
@@ -225,7 +219,7 @@ plt.ylabel("Frequency")
 plt.show()
 
 
-# In[70]:
+# In[16]:
 
 
 min_priors = int(compas_df['priors_count'].min())
@@ -241,7 +235,7 @@ compas_df[compas_df['race'].isin(["African-American","Caucasian"])].groupby('rac
 )
 
 
-# In[86]:
+# In[17]:
 
 
 import matplotlib.colors as mcolors
@@ -257,7 +251,7 @@ plt.show()
 
 # In this exploratory data analysis, we will examine the structure and characteristics of the dataset, including its size, distribution of variables, and any missing or abnormal values. We will also create visualizations to help identify patterns and relationships between variables. The insights gained from this analysis will be used to guide the development of hypotheses and the choice of statistical models for our subsequent analysis.
 
-# In[6]:
+# In[18]:
 
 
 compas_df['race'].value_counts().plot(
@@ -268,7 +262,7 @@ compas_df['race'].value_counts().plot(
 
 # It can be clearly seen from the graph that the sample is unbalanced with regards to the race feature, where the sample data of COMPAS have extremely small representation of Asian and Native American. According to the US Census data, Asians make up about 5.23% of the nation’s overall population in 2014; in the ProPublica, however, they accounts for only 0.5% of the data.
 
-# In[7]:
+# In[19]:
 
 
 value_counts = compas_df['race'].value_counts()
@@ -282,7 +276,7 @@ print(table)
 
 # Next, we examine the distribution of COMPAS decile scores across different racial groups in relation to recidivism.
 
-# In[8]:
+# In[20]:
 
 
 score_text_by_race = compas_df.groupby(['race','score_text'], sort = True)['id'].size()
@@ -299,7 +293,7 @@ score_text_by_race.unstack().sort_values(by="race", ascending=False).plot(
 
 # African American defendants have the highest number of individuals classified with high scores. However, it is important to consider that African Americans make up the largest racial group in this dataset, representing 51.442% of the total.
 
-# In[9]:
+# In[21]:
 
 
 import matplotlib.cm as cm
@@ -318,7 +312,7 @@ compas_df.groupby('race')['decile_score'].value_counts(normalize=True).unstack()
 )
 
 
-# In[10]:
+# In[22]:
 
 
 plt.hist(compas_df['age'], bins=20, color='#ffab40')
@@ -332,7 +326,7 @@ plt.show()
 
 # ## Replicating the Analysis
 
-# In[11]:
+# In[23]:
 
 
 df = compas_df.copy()
@@ -349,14 +343,14 @@ df = compas_df.copy()
 
 # **Compas Score Distribution**
 
-# In[14]:
+# In[24]:
 
 
 # Create a dataframe with only the african-americans and caucasians
 df_binary = df.loc[df['race'].isin(["African-American","Caucasian"])]
 
 
-# In[15]:
+# In[25]:
 
 
 # Calculate the total and proportions of decile scores per race
@@ -364,7 +358,7 @@ decile_score_by_race_prop= df_binary.groupby(['race', 'decile_score']).agg({'dec
 decile_score_by_race_prop['prop'] = decile_score_by_race_prop.groupby(level = 0).apply(lambda x:100 * x / float(x.sum()))
 
 
-# In[16]:
+# In[26]:
 
 
 # Calculate the total and proportions of recidivates per race
@@ -372,7 +366,7 @@ is_recid_by_race_prop= df_binary.groupby(['race', 'is_recid']).agg({'decile_scor
 is_recid_by_race_prop['prop'] = is_recid_by_race_prop.groupby(level = 0).apply(lambda x:100 * x / float(x.sum()))
 
 
-# In[17]:
+# In[27]:
 
 
 sns.countplot(
@@ -392,7 +386,7 @@ plt.ylabel('Count')
 # 
 # 
 
-# In[18]:
+# In[28]:
 
 
 sns.countplot(
@@ -408,14 +402,14 @@ plt.ylabel('Count')
 
 # **Most predictive factors in logistic model (with controlling for other factors) for score**
 
-# In[20]:
+# In[29]:
 
 
 # As in the ProPublica article the score text "medium" and "high" are labeled "high", the score text "low" stays the same in order to have binary score texts
 df['score_text_binary'] = df['score_text'].replace(['Medium'], 'High')
 
 
-# In[21]:
+# In[30]:
 
 
 # In order to be able to use this labeling in the regression, the labels need to be numerical
@@ -427,7 +421,7 @@ df['score_text_binary']= df['score_text_binary'].replace(['Low'], 0)
 # 
 # For that, we reproduced the logistic regression they made, and later we adjust it.
 
-# In[22]:
+# In[31]:
 
 
 # Logistic Regression: Where the intercept doesn't take the right value automatically, we set it via the reference. 
@@ -438,7 +432,7 @@ est = smf.logit('score_text_binary ~ C(age_cat) + C(race, Treatment(reference="C
 print(est.summary())
 
 
-# In[23]:
+# In[32]:
 
 
 # Controlling for other variables by taking the Intercept to have a control and a treatment group
@@ -462,7 +456,7 @@ FinalClaim
 
 # **Different base rates for recidivism**
 
-# In[ ]:
+# In[33]:
 
 
 sns.countplot(
@@ -484,7 +478,7 @@ plt.ylabel('Count')
 # 
 # We wanted to reproduce the ROC for the Sample A as Northpointe did. Sample A, as mentioned in their article, "consists of pretrial defendants with complete case records who have at least two years of follow-up time. The PP authors use Sample A to fit reverse logistic regressions predicting the“Not Low”Risk Level."
 
-# In[24]:
+# In[34]:
 
 
 # Convert categorical features to numeric levels
@@ -495,7 +489,7 @@ for feature in df.columns:
       df[feature] = le.fit_transform(df[feature].astype(str)) #le.fit_transform(df_train[feature].astype(str))
 
 
-# In[25]:
+# In[35]:
 
 
 # Dataframe of target: binary score text
@@ -504,7 +498,7 @@ y = df.score_text_binary
 
 # We take the same features as ProPublica did for their logistic regression. This is what Northpointe did as well (Sample A)
 
-# In[26]:
+# In[36]:
 
 
 X = df[['age_cat','race', 'sex', 'priors_count','c_charge_degree', 'two_year_recid']]
@@ -513,7 +507,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.11, rand
 
 # Although we used the same sample A for our ROC, the AUC is different from Northpointe (AUC=0.71).
 
-# In[27]:
+# In[37]:
 
 
 # Fit logisti regression
@@ -548,7 +542,7 @@ print('The total AUC is ', metrics.roc_auc_score(y_test, y_pred_prob))
 # - ProPublica definition of fairnes: among defendants who did not reoffend, the proportion of blacks and whites that were classified as low risk should have been the same. As we shown, black defendants are more likely to be classified as High risk although they later wouldn't reoffend.
 # 
 
-# In[28]:
+# In[38]:
 
 
 def calibration_curve(df):
@@ -556,7 +550,7 @@ def calibration_curve(df):
     return grouped['two_year_recid'].mean()
 
 
-# In[29]:
+# In[39]:
 
 
 # Create Datafram with only african-americans
@@ -566,7 +560,7 @@ df_black.shape
 
 # Washington Post shows the Northpointe's definition of fairnes with the following graphic, which shows the recidivism rate by risk score and race. White and black defendants with the same risk score are roughly equally likely to reoffend.
 
-# In[30]:
+# In[40]:
 
 
 # for all data in the dataset
@@ -594,7 +588,7 @@ plt.ylabel("Two Year Recidivism Rate")
 plt.legend()
 
 
-# In[31]:
+# In[41]:
 
 
 # Create Datafram with only african-americans
@@ -610,7 +604,7 @@ df_white = raw_data.loc[raw_data['race'].isin(["Caucasian"])]
 # 
 # * Divide the dataframe into two groups: those who recidivated and those who did not.
 
-# In[96]:
+# In[42]:
 
 
 # Per race:
@@ -625,7 +619,7 @@ df_black_recid = df_black.loc[df_black['is_recid'].isin([1])]
 df_black_nonrecid = df_black.loc[df_black['is_recid'].isin([0])]
 
 
-# In[97]:
+# In[43]:
 
 
 # Create figure and axes objects
@@ -681,13 +675,13 @@ plt.show()
 
 # Our hypothesis focuses on the predictability of recidivism based on simple factors, therefore, we only use a subset of the features available in the dataset. The selected features include 'sex', 'age', 'race', 'priors_count', and 'c_charge_degree', which will be used to predict the two-year recidivism. These features were chosen based on their simplicity and potential impact on recidivism, and represent a mix of demographic and criminal history information."
 
-# In[34]:
+# In[44]:
 
 
 df = compas_df.copy()
 
 
-# In[35]:
+# In[45]:
 
 
 df = df[['sex', 'age', 'race', 'priors_count', 'c_charge_degree', 'two_year_recid']]
@@ -697,7 +691,7 @@ df.shape
 # #### Data bias 
 # To solve the data imbalance this issue in Race group, we merge these two groups into a single "Other" group, making the sample data more balanced and allowing us to make more accurate predictions."
 
-# In[36]:
+# In[46]:
 
 
 df.loc[df['race'].isin(['Native American', 'Asian']), 'race'] = "Other"
@@ -708,7 +702,7 @@ df['race'].value_counts()
 
 # In this step, we are checking the balance of the target variable, which is the rate of recidivism. According to the data, the rate of not recidivism is 45.51% and the rate of recidivism is 54.49%. This means that the data is imbalanced, with a higher rate of recidivism than not recidivism. Despite the imbalance, the difference in the rate is small, so we have decided to leave it as it is, without making any adjustments.
 
-# In[37]:
+# In[47]:
 
 
 not_recid = (df['two_year_recid'].sum()/df['two_year_recid'].shape[0])*100
@@ -721,7 +715,7 @@ print("Recidivism Rate: %.3f%%" % (100-not_recid))
 
 # The categorical data is converted into numerical data with OneHotCoder. The purpose of converting these variables into numerical form is to make it easier for machine learning algorithms to work with the data. In addition, to ensure consistency and accurate scaling, the numerical data is then standardized using StandardScaler. This helps to eliminate any biases or disparities that may be present in the data, leading to more accurate results from machine learning models.
 
-# In[38]:
+# In[48]:
 
 
 categorical_features = ['race', 'sex', 'c_charge_degree']
@@ -747,7 +741,7 @@ preprocessor = ColumnTransformer(transformers=[
 
 # The dataset was divided into two parts: 70% for training and 30% for testing. In order to ensure that the proportion of positive and negative samples in both the training and testing datasets was the same as in the original dataset, the stratified sampling approach was used with the target variable 'two_year_recid' as the stratification criterion. This helps to avoid any bias in the model evaluation that could result from an imbalanced distribution of the target variable in the training and testing datasets.
 
-# In[39]:
+# In[49]:
 
 
 # define features, target, and stratify for splitting
@@ -757,7 +751,7 @@ stratify = df['two_year_recid']
 race = df['race'] # for fairness check later
 
 
-# In[40]:
+# In[50]:
 
 
 X_train, X_test, y_train, y_test, race_train, race_test = train_test_split(
@@ -777,7 +771,7 @@ X_train, X_test, y_train, y_test, race_train, race_test = train_test_split(
 # 
 # Initially, the model is implemented on the training data without any tuning or adjustments to the model's parameters. This allows us to obtain a baseline performance of the model and serves as a starting point for further optimization.
 
-# In[41]:
+# In[51]:
 
 
 classifiers = {
@@ -796,7 +790,7 @@ classifiers = {
 # #### Evaluation Metrics
 # The F1 score and AUC ROC are used as the evaluation metrics for the models due to the slight imbalance in the data class. These metrics provide a comprehensive evaluation of the model's performance in terms of precision, recall, and accuracy, allowing us to address the imbalance in the data class and accurately assess the model's ability to predict recidivism. In addition, cross validation using Stratified Kfolds with 5 splits is also employed to improve the robustness of the model evaluation results.
 
-# In[42]:
+# In[52]:
 
 
 # create a df to store the cross-validation results of each model
@@ -808,7 +802,7 @@ cv_result = pd.DataFrame(columns= ['Model',
                                    'AVG Accuracy'])
 
 
-# In[43]:
+# In[53]:
 
 
 for model_name in classifiers.keys():
@@ -837,7 +831,7 @@ for model_name in classifiers.keys():
                                 )
 
 
-# In[44]:
+# In[54]:
 
 
 # print the result, sort by the AVG F1
@@ -851,7 +845,7 @@ cv_result.sort_values(by='AVG F1', ascending=False)
 
 # We utilized Random Search to find the best hyperparameters for each of the tree-based models. The hyperparameters are the parameters that cannot be learned from the training data and are used to control the learning process of the model. By fine-tuning these hyperparameters, we aimed to improve the performance of the tree-based models and find the best one for our problem.
 
-# In[45]:
+# In[55]:
 
 
 # define params grid for decision tree
@@ -863,7 +857,7 @@ dt_param_grid = {
     'classifier__max_features': ['auto','sqrt','log2',None]}
 
 
-# In[46]:
+# In[56]:
 
 
 # define params grid for random forest
@@ -877,7 +871,7 @@ rf_param_grid = {
 }
 
 
-# In[47]:
+# In[57]:
 
 
 tuning_classifiers = {
@@ -890,7 +884,7 @@ tuning_classifiers = {
 }
 
 
-# In[253]:
+# In[58]:
 
 
 # comment out b/c running time was a bit long, the results were added to the classifiers below
@@ -910,7 +904,7 @@ tuning_classifiers = {
 #     print()
 
 
-# In[48]:
+# In[59]:
 
 
 tuned_classifiers = {
@@ -943,7 +937,7 @@ tuned_classifiers = {
 
 # We use the Dalex package which provides a suite of tools for interpretation and explanation of complex predictive models. The use of Dalex allows us to obtain a better understanding of the relationship between our predictors and the outcome we aim to predict. 
 
-# In[112]:
+# In[60]:
 
 
 # use Dalexdalex library
@@ -954,7 +948,7 @@ import dalex as dx
 # https://pypi.org/project/plotly/
 
 
-# In[50]:
+# In[61]:
 
 
 exp_list = []
@@ -990,7 +984,7 @@ for model_name in tuned_classifiers.keys():
 # 
 # As mentioned before, there is a trade-off between recall and precision. A very precise model is very “pure”: maybe it does not find all the positives, but the ones that the model does class as positive are very likely to be correct. On the contrary, a model with high recall succeeds well in finding all the positive cases in the data, even though they may also wrongly identify some negative cases as positive cases.
 
-# In[51]:
+# In[62]:
 
 
 m_performance_list = [e.model_performance() for e in exp_list]
@@ -999,7 +993,7 @@ pd.concat([mp.result[['f1','auc','accuracy','recall','precision']] for mp in m_p
 
 # The ROC graph shows that the decision tree has a lower performance compared to the other two methods, logistic regression and random forest, which have similar results. In terms of AUC, logistic regression has a better performance than random forest.
 
-# In[52]:
+# In[63]:
 
 
 m_performance_list[0].plot(m_performance_list[1:], geom="roc")
@@ -1013,7 +1007,7 @@ m_performance_list[0].plot(m_performance_list[1:], geom="roc")
 # 
 # In the three models, both, precision and recall, are higher for African-Americans. This is expectable since there are more black individuals in the data set, so the model can be better trained.
 
-# In[53]:
+# In[64]:
 
 
 # to calculate the error down by group
@@ -1053,19 +1047,19 @@ def error_breakdown_by_race(model_name):
     return html
 
 
-# In[54]:
+# In[65]:
 
 
 error_breakdown_by_race('Logistic Regression')
 
 
-# In[55]:
+# In[66]:
 
 
 error_breakdown_by_race('Decision Tree')
 
 
-# In[56]:
+# In[67]:
 
 
 error_breakdown_by_race('Random Forest')
@@ -1076,13 +1070,13 @@ error_breakdown_by_race('Random Forest')
 # Dalex uses drop-out loss to represent how much the overall accuracy of the model would decrease if a specific feature were removed. According to the chart, if the feature "priors_count" were removed, the model's information would decrease significantly. In constrast, it would have been better if the "race" feature was dropped because our models do not use the 'race' feature. 
 # Nevertheless, we need to examinate other metrics before making the conclusion
 
-# In[57]:
+# In[68]:
 
 
 m_vi_list = [e.model_parts() for e in exp_list]
 
 
-# In[58]:
+# In[69]:
 
 
 m_vi_list[0].plot(m_vi_list[1:])
@@ -1094,13 +1088,13 @@ m_vi_list[0].plot(m_vi_list[1:])
 
 # The partial-dependence profiles for age and prior crimes show a general trend of increased predicted probability of recidivism with younger age and higher number of prior crimes. The relationship between the features and the target in logistic regression is modeled using a linear equation, resulting in a smooth partial-dependence profile curve. In contrast, decision trees and random forests use non-linear decision rules, leading to a more complex and non-linear relationship between the features and the target. As a result, the partial-dependence profiles for these models are not necessarily smooth and tend to be flatter. The difference also can be seen at the right edge of the age scale, which is likely due to random forest models' tendency to shrink predictions towards the average and poor extrapolation performance outside the range of values seen in the training data.
 
-# In[59]:
+# In[70]:
 
 
 m_pdp_list = [e.model_profile(type = 'partial') for e in exp_list]
 
 
-# In[60]:
+# In[71]:
 
 
 m_pdp_list[0].plot(m_pdp_list[1:])
@@ -1110,7 +1104,7 @@ m_pdp_list[0].plot(m_pdp_list[1:])
 # 
 # When analyzing all categorical variables, the green bar for logistic regression is always bigger than the blue one for random forest. This is expected because, in general, random forest models shrink predictions towards the average.
 
-# In[61]:
+# In[72]:
 
 
 m_pdp_cate_list = [e.model_profile(variable_type = 'categorical') for e in exp_list]
@@ -1123,7 +1117,7 @@ m_pdp_cate_list[0].plot(m_pdp_cate_list[1:])
 
 # **First Sample**
 
-# In[62]:
+# In[73]:
 
 
 sample_1 = X_test.iloc[[3]]
@@ -1134,7 +1128,7 @@ sample_1.head()
 # 
 # In both models, random forest and logistic regression, the variable race = African-American increases the probability of recidivism, but in the random forest, it has a greater weight (0.029 compared to 0.018 in logistic regression). The same occurs with the other variables, where they have a greater absolute contribution in the random forest than in logistic regression. This is different from the analysis conducted in the global explanation, where it was mentioned that the effect of the variable race is greater for logistic regression compared to random forest. Overall, the prediction is higher than the mean.
 
-# In[63]:
+# In[74]:
 
 
 sample_1_bd_list = [e.predict_parts(sample_1, type='break_down') for e in exp_list]
@@ -1145,7 +1139,7 @@ sample_1_bd_list[0].plot(sample_1_bd_list[1:])
 
 # **The Shapley value** represents the average marginal contribution of a feature value across all possible combinations of the other features (i.e., all possible coalitions of features that are not being analyzed). For the sample_1 woman, in both logistic regression and random forest, all variables except gender increase the probability of recidivism, and the Shapley values have a similar behavior as seen in the Break-down plots.
 
-# In[64]:
+# In[75]:
 
 
 sample_1_shap_list = [e.predict_parts(sample_1, type='shap') for e in exp_list]
@@ -1154,7 +1148,7 @@ sample_1_shap_list[0].plot(sample_1_shap_list[1:])
 
 # **Sample 2**
 
-# In[65]:
+# In[76]:
 
 
 sample_2 = X_test.iloc[[20]]
@@ -1165,7 +1159,7 @@ sample_2
 # 
 # In this case, we can see that the contribution of each variable (except for the race) in the logistic regression is bigger in absolute terms than for the random forest, as we would expect since the random forest tends to shrink towards the mean.
 
-# In[66]:
+# In[77]:
 
 
 sample_2_bd_list = [e.predict_parts(sample_2, type='break_down') for e in exp_list]
@@ -1176,7 +1170,7 @@ sample_2_bd_list[0].plot(sample_2_bd_list[1:])
 # 
 # Overall, for logistic regression and random forest, we can see that the most important variables for both local and global explanations are the number of prior crimes, age, and, to a lesser extent, gender. Regarding race, it seems to be important for the random forest, as its performance would decrease if it was removed. Additionally, when analyzing partial dependence, the effect is larger - in the global explanation - and it has a greater impact on the prediction when viewed in the context of local explanation, compared to the logistic regression.
 
-# In[67]:
+# In[78]:
 
 
 sample_2_shap_list = [e.predict_parts(sample_2, type='shap') for e in exp_list]
@@ -1207,13 +1201,13 @@ sample_2_shap_list[0].plot(sample_2_shap_list[1:])
 
 # According to ProPublica, Caucasian individuals was determined to be underpredicted. Hence, this group was selected as the privileged group to see if our model is also privileged them.
 
-# In[68]:
+# In[79]:
 
 
 mf_list = [e.model_fairness(protected = race_test, privileged = "Caucasian") for e in exp_list]
 
 
-# In[69]:
+# In[80]:
 
 
 mf_list[0].plot(mf_list[1:])
@@ -1239,7 +1233,7 @@ mf_list[0].plot(mf_list[1:])
 # 
 # * STP: this ratio shows that black defendants are assigned a positive outcome (will reoffend) more often than white defendants. This is also related to the results in TPR and FPR.
 
-# In[70]:
+# In[81]:
 
 
 for mf in mf_list:
@@ -1248,19 +1242,19 @@ for mf in mf_list:
     print("\n")
 
 
-# In[71]:
+# In[82]:
 
 
 mf_list[0].plot(mf_list[1:],type = 'stacked')
 
 
-# In[72]:
+# In[83]:
 
 
 mf_list[0].plot(mf_list[1:],type = 'radar')
 
 
-# In[73]:
+# In[84]:
 
 
 mf_list[0].plot(mf_list[1:],type = 'heatmap')
@@ -1367,9 +1361,3 @@ mf_list[0].plot(mf_list[1:],type = 'heatmap')
 # Molnar, Christoph (2022): Interpretable Machine Learning: A Guide for Making Black Box Models Explainable. Retrieved January 12, 2023, from  https://christophm.github.io/interpretable-ml-book/feature-importance.html
 # 
 # Lundberg, S. (2020, December 18). Welcome to the SHAP documentation Retrieved from https://github.com/slundberg/shap/blob/master/docs/index.rst
-
-# In[ ]:
-
-
-
-
