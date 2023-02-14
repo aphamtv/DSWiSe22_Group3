@@ -27,7 +27,7 @@ np.random.seed(rand)
 compas_df = load_compas_df()
 
 
-# ### Processing Data
+# ## Processing Data
 
 # Our hypothesis focuses on the predictability of recidivism based on simple factors, therefore, we only use a subset of the features available in the dataset. The selected features include 'sex', 'age', 'race', 'priors_count', and 'c_charge_degree', which will be used to predict the two-year recidivism. These features were chosen based on their simplicity and potential impact on recidivism, and represent a mix of demographic and criminal history information."
 
@@ -44,7 +44,7 @@ df = df[['sex', 'age', 'race', 'priors_count', 'c_charge_degree', 'two_year_reci
 df.shape
 
 
-# #### Data bias 
+# ### Data bias 
 # To solve the data imbalance this issue in Race group, we merge these two groups into a single "Other" group, making the sample data more balanced and allowing us to make more accurate predictions."
 
 # In[6]:
@@ -54,7 +54,7 @@ df.loc[df['race'].isin(['Native American', 'Asian']), 'race'] = "Other"
 df['race'].value_counts()
 
 
-# #### Data Imbalance
+# ### Data Imbalance
 
 # In this step, we are checking the balance of the target variable, which is the rate of recidivism. According to the data, the rate of not recidivism is 45.51% and the rate of recidivism is 54.49%. This means that the data is imbalanced, with a higher rate of recidivism than not recidivism. Despite the imbalance, the difference in the rate is small, so we have decided to leave it as it is, without making any adjustments.
 
@@ -67,7 +67,7 @@ print("Not Recidivism Rate: %.3f%%" % not_recid)
 print("Recidivism Rate: %.3f%%" % (100-not_recid))
 
 
-# #### Convert Categorical Data
+# ### Convert Categorical Data
 
 # The categorical data is converted into numerical data with OneHotCoder. The purpose of converting these variables into numerical form is to make it easier for machine learning algorithms to work with the data. In addition, to ensure consistency and accurate scaling, the numerical data is then standardized using StandardScaler. This helps to eliminate any biases or disparities that may be present in the data, leading to more accurate results from machine learning models.
 
@@ -144,6 +144,7 @@ classifiers = {
 
 
 # #### Evaluation Metrics
+
 # The F1 score and AUC ROC are used as the evaluation metrics for the models due to the slight imbalance in the data class. These metrics provide a comprehensive evaluation of the model's performance in terms of precision, recall, and accuracy, allowing us to address the imbalance in the data class and accurately assess the model's ability to predict recidivism. In addition, cross validation using Stratified Kfolds with 5 splits is also employed to improve the robustness of the model evaluation results.
 
 # In[12]:
@@ -612,5 +613,6 @@ mf_list[0].plot(mf_list[1:],type = 'radar')
 mf_list[0].plot(mf_list[1:],type = 'heatmap')
 
 
-# #### Conclusion
+# ### Conclusion
+
 # Overall, "priors_count" and "age" are important predictors for the target variable in all three models. Our analysis shows that the performance of our random forest model is only slightly better than the simple logistic model. While there are tools available to help us understand the "black box" nature of the random forest model, the logistic model is still easier to interpret and understand due to its straightforward linear equation. However, it is important to note that all three models are unfair, and this limitation highlights the need for continued work to address biases in algorithmic systems. As machine learning methods play an increasingly important role in our society, it is crucial that we remain aware of their limitations and work to improve their fairness and accuracy.

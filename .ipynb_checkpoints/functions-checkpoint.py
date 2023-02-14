@@ -21,13 +21,13 @@ rand = 3
 os.environ['PYTHONHASHSEED']=str(rand)
 np.random.seed(rand)
 
-def load_raw_df():
+def load_raw_data():
     dataURL = 'https://raw.githubusercontent.com/propublica/compas-analysis/master/compas-scores-two-years.csv'
     raw_data = pd.read_csv(dataURL)
     return raw_data
 
 def load_compas_df():
-    raw_data = load_raw_df()
+    raw_data = load_raw_data()
     compas_df = raw_data.loc[
         (raw_data['days_b_screening_arrest'] <= 30) &
         (raw_data['days_b_screening_arrest'] >= -30) &

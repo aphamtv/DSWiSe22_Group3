@@ -116,22 +116,15 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  COMPAS Background
+  Analysis of COMPAS fairness
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="compas.html">
    COMPAS Algorithm
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Analysis of COMPAS fairness
- </span>
-</p>
-<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Exploratory Analysis
@@ -350,36 +343,29 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-preparation">
-   Data Preparation
+  <a class="reference internal nav-link" href="#race-variables">
+   Race Variables
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#race-variables">
-     Race Variables
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sex-variables">
-     Sex Variables
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#age-variable">
-     Age Variable
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#decile-scores">
-     Decile Scores
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#priors-count-variable">
-     Priors_Count Variable
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sex-variables">
+   Sex Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#age-variable">
+   Age Variable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decile-scores">
+   Decile Scores
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#priors-count-variable">
+   Priors_Count Variable
+  </a>
  </li>
 </ul>
 
@@ -401,36 +387,29 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-preparation">
-   Data Preparation
+  <a class="reference internal nav-link" href="#race-variables">
+   Race Variables
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#race-variables">
-     Race Variables
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sex-variables">
-     Sex Variables
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#age-variable">
-     Age Variable
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#decile-scores">
-     Decile Scores
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#priors-count-variable">
-     Priors_Count Variable
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sex-variables">
+   Sex Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#age-variable">
+   Age Variable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decile-scores">
+   Decile Scores
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#priors-count-variable">
+   Priors_Count Variable
+  </a>
  </li>
 </ul>
 
@@ -445,8 +424,6 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="exploratory-analysis">
 <h1>Exploratory Analysis<a class="headerlink" href="#exploratory-analysis" title="Permalink to this headline">#</a></h1>
 <p>In this exploratory data analysis, we will examine the structure and characteristics of the dataset, including its size, distribution of variables, and any missing or abnormal values. We will also create visualizations to help identify patterns and relationships between variables. The insights gained from this analysis will be used to guide the development of hypotheses and the choice of statistical models for our subsequent analysis.</p>
-<section id="data-preparation">
-<h2>Data Preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> functions.py
@@ -456,20 +433,20 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set global random seed</span>
-<span class="n">rand</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;PYTHONHASHSEED&#39;</span><span class="p">]</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">rand</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">rand</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_data</span> <span class="o">=</span> <span class="n">load_raw_data</span><span class="p">()</span>
+<span class="n">raw_data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(7214, 53)
 </pre></div>
 </div>
 </div>
 </div>
-<p>We use the <code class="docutils literal notranslate"><span class="pre">Compas-scores-two-years</span></code> dataset published by ProPublica and apply the same data filter used by them to create a new dataframe compas_df. The dataset contains information on defendants charged with a crime and assessed using the COMPAS risk assessment tool. The data includes demographic information, criminal history, and the results of the COMPAS assessment, including a predicted risk score and likelihood of recidivism over a two-year period. The filter selects only the rows from the data where the number of days between the arrest and the screening is within the range of -30 to 30, the value in the is_recid column is not -1, the value in the c_charge_degree column is not “O”, and the value in the score_text column is not “N/A”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataURL</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/propublica/compas-analysis/master/compas-scores-two-years.csv&#39;</span>
-<span class="n">raw_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dataURL</span><span class="p">)</span>
-<span class="n">raw_data</span><span class="o">.</span><span class="n">columns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_data</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 </div>
 </div>
@@ -493,27 +470,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compas_df</span> <span class="o">=</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
-    <span class="p">(</span><span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;days_b_screening_arrest&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">)</span> <span class="o">&amp;</span>
-    <span class="p">(</span><span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;days_b_screening_arrest&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">30</span><span class="p">)</span> <span class="o">&amp;</span>
-    <span class="p">(</span><span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;is_recid&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span>
-    <span class="p">(</span><span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;c_charge_degree&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;O&quot;</span><span class="p">)</span> <span class="o">&amp;</span>
-    <span class="p">(</span><span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;score_text&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;N/A&quot;</span><span class="p">)</span>
-<span class="p">]</span>
-<span class="n">compas_df</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6172, 53)
-</pre></div>
-</div>
-</div>
-</div>
 <section id="race-variables">
-<h3>Race Variables<a class="headerlink" href="#race-variables" title="Permalink to this headline">#</a></h3>
+<h2>Race Variables<a class="headerlink" href="#race-variables" title="Permalink to this headline">#</a></h2>
 <p>Initially, we assess the distribution of Race Variables</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -525,10 +483,17 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Defendants by Race Distribution&#39;}&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Defendants by Race Distribution&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">kind</span><span class="o">=</span> <span class="s2">&quot;barh&quot;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#f17775&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;compas_df&#39; is not defined
 </pre></div>
 </div>
-<img alt="_images/eda_10_1.png" src="_images/eda_10_1.png" />
 </div>
 </div>
 <p>It can be clearly seen from the graph that the sample is unbalanced with regards to the race feature, where the sample data of COMPAS have extremely small representation of Asian and Native American. According to the US Census data, Asians make up about 5.23% of the nation’s overall population in 2014; in the ProPublica, however, they accounts for only 0.5% of the data.</p>
@@ -559,7 +524,7 @@ Native American             11       0.178
 </div>
 </section>
 <section id="sex-variables">
-<h3>Sex Variables<a class="headerlink" href="#sex-variables" title="Permalink to this headline">#</a></h3>
+<h2>Sex Variables<a class="headerlink" href="#sex-variables" title="Permalink to this headline">#</a></h2>
 <p>That there is a significant imbalance in the distribution of males and females in the sample population, with males accounting for approximately 81% of the sample and females accounting for approximately 19%.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -574,7 +539,7 @@ Native American             11       0.178
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Defendants by Sex Distribution&#39;}&gt;
 </pre></div>
 </div>
-<img alt="_images/eda_15_1.png" src="_images/eda_15_1.png" />
+<img alt="_images/eda_12_1.png" src="_images/eda_12_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -605,19 +570,16 @@ Female          1175      19.038
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;two_year_recid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    3363
+1    2809
+Name: two_year_recid, dtype: int64
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="age-variable">
-<h3>Age Variable<a class="headerlink" href="#age-variable" title="Permalink to this headline">#</a></h3>
+<h2>Age Variable<a class="headerlink" href="#age-variable" title="Permalink to this headline">#</a></h2>
 <p>Histogram shows that most of the defendants in the COMPAS data are between the ages of 25 and 35, with a concentration of ages towards the younger end of this range. This type of distribution can indicate that the population of defendants in the COMPAS data is relatively young, with fewer older defendants.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -630,7 +592,7 @@ Female          1175      19.038
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/eda_20_0.png" src="_images/eda_20_0.png" />
+<img alt="_images/eda_17_0.png" src="_images/eda_17_0.png" />
 </div>
 </div>
 <p>Given that African American and Caucasian groups are the predominant populations in our dataset, we will analyze age distributions within these two populations to gain a deeper understanding of their demographic structures.</p>
@@ -669,12 +631,12 @@ Female          1175      19.038
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Age Distribution by Race&#39;}, xlabel=&#39;race&#39;, ylabel=&#39;Number of Defendants&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/eda_23_1.png" src="_images/eda_23_1.png" />
+<img alt="_images/eda_20_1.png" src="_images/eda_20_1.png" />
 </div>
 </div>
 </section>
 <section id="decile-scores">
-<h3>Decile Scores<a class="headerlink" href="#decile-scores" title="Permalink to this headline">#</a></h3>
+<h2>Decile Scores<a class="headerlink" href="#decile-scores" title="Permalink to this headline">#</a></h2>
 <p>Next, we examine the distribution of COMPAS decile scores across different racial groups in relation to recidivism.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -695,7 +657,7 @@ Female          1175      19.038
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Score Text by Race&#39;}, xlabel=&#39;Race&#39;, ylabel=&#39;Score Text&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/eda_26_1.png" src="_images/eda_26_1.png" />
+<img alt="_images/eda_23_1.png" src="_images/eda_23_1.png" />
 </div>
 </div>
 <p>African American defendants have the highest number of individuals classified with high scores. However, it is important to consider that African Americans make up the largest racial group in this dataset, representing 51.442% of the total. To better understand the distribution of decile scores among different racial groups, we plotted the histogram as below. The chart eveals a noticeable pattern. As the decile score increases, the proportion of defendants from both the Caucasian and ‘Other’ racial groups decreases. However, this trend is not observed in the African American group, where the proportion of defendants remains relatively stable across different decile scores.</p>
@@ -714,12 +676,12 @@ Female          1175      19.038
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Decile Score Histogram by Race&#39;}, xlabel=&#39;race&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/eda_28_1.png" src="_images/eda_28_1.png" />
+<img alt="_images/eda_25_1.png" src="_images/eda_25_1.png" />
 </div>
 </div>
 </section>
 <section id="priors-count-variable">
-<h3>Priors_Count Variable<a class="headerlink" href="#priors-count-variable" title="Permalink to this headline">#</a></h3>
+<h2>Priors_Count Variable<a class="headerlink" href="#priors-count-variable" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;priors_count&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#016d8c&#39;</span><span class="p">)</span>
@@ -731,7 +693,7 @@ Female          1175      19.038
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/eda_30_0.png" src="_images/eda_30_0.png" />
+<img alt="_images/eda_27_0.png" src="_images/eda_27_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -754,7 +716,7 @@ Female          1175      19.038
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;&quot;Priors Count&quot; Distribution by Race&#39;}, xlabel=&#39;race&#39;, ylabel=&#39;Number of Defendants&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/eda_31_1.png" src="_images/eda_31_1.png" />
+<img alt="_images/eda_28_1.png" src="_images/eda_28_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -772,7 +734,7 @@ Female          1175      19.038
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/eda_32_0.png" src="_images/eda_32_0.png" />
+<img alt="_images/eda_29_0.png" src="_images/eda_29_0.png" />
 </div>
 </div>
 <p>In this exploratory data analysis, we will examine the structure and characteristics of the dataset, including its size, distribution of variables, and any missing or abnormal values. We will also create visualizations to help identify patterns and relationships between variables. The insights gained from this analysis will be used to guide the development of hypotheses and the choice of statistical models for our subsequent analysis.</p>
@@ -789,7 +751,7 @@ Female          1175      19.038
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Defendants by Race Distribution&#39;}&gt;
 </pre></div>
 </div>
-<img alt="_images/eda_34_1.png" src="_images/eda_34_1.png" />
+<img alt="_images/eda_31_1.png" src="_images/eda_31_1.png" />
 </div>
 </div>
 <p>It can be clearly seen from the graph that the sample is unbalanced with regards to the race feature, where the sample data of COMPAS have extremely small representation of Asian and Native American. According to the US Census data, Asians make up about 5.23% of the nation’s overall population in 2014; in the ProPublica, however, they accounts for only 0.5% of the data.</p>
@@ -838,7 +800,7 @@ Native American             11       0.178
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Score Text by Race&#39;}, xlabel=&#39;Race&#39;, ylabel=&#39;Score Text&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/eda_38_1.png" src="_images/eda_38_1.png" />
+<img alt="_images/eda_35_1.png" src="_images/eda_35_1.png" />
 </div>
 </div>
 <p>African American defendants have the highest number of individuals classified with high scores. However, it is important to consider that African Americans make up the largest racial group in this dataset, representing 51.442% of the total.</p>
@@ -865,7 +827,7 @@ Native American             11       0.178
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Decile Score Histogram by Race&#39;}, xlabel=&#39;race&#39;, ylabel=&#39;% with Decile Score&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/eda_40_1.png" src="_images/eda_40_1.png" />
+<img alt="_images/eda_37_1.png" src="_images/eda_37_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -879,23 +841,10 @@ Native American             11       0.178
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/eda_41_0.png" src="_images/eda_41_0.png" />
+<img alt="_images/eda_38_0.png" src="_images/eda_38_0.png" />
 </div>
 </div>
 <p>Histogram shows that most of the defendants in the COMPAS data are between the ages of 25 and 35, with a concentration of ages towards the younger end of this range. This type of distribution can indicate that the population of defendants in the COMPAS data is relatively young, with fewer older defendants.</p>
-<p>Markus Waser, “Nonlinear Dependencies in and between Time Series” retrieved from: <a class="reference external" href="https://publik.tuwien.ac.at/files/PubDat_189752.pdf">https://publik.tuwien.ac.at/files/PubDat_189752.pdf</a><br></p>
-<p>Patrick Hall, “Predictive modeling: Striking a balance between accuracy and interpretability”. Retrieved from: <a class="reference external" href="https://www.oreilly.com/content/predictive-modeling-striking-a-balance-between-accuracy-and-interpretability/">https://www.oreilly.com/content/predictive-modeling-striking-a-balance-between-accuracy-and-interpretability/</a><br></p>
-<p>Chunrong Ai and Edward C. Norton, “Computing interaction effects and standard errors in logit and Probit models” retrieved from: <a class="reference external" href="https://hhstokes.people.uic.edu/ftp/e535/probit/NortonWangAi.pdf">https://hhstokes.people.uic.edu/ftp/e535/probit/NortonWangAi.pdf</a><br></p>
-<p>Jerome H. Friedman, “Greedy function approximation: A gradient boosting machine..” Ann. Statist. 29 (5) 1189 - 1232, October 2001. Retrieved from: <a class="reference external" href="https://doi.org/10.1214/aos/1013203451">https://doi.org/10.1214/aos/1013203451</a><br></p>
-<p>Molnar, Christoph. “Interpretable Machine Learning: A Guide for Making Black Box Models Explainable” (2022): Chapter: Permutation Feature Importance
-Slundberg/shap · GitHub<br></p>
-<p>Rudin, Cynthia. “Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and use Interpretable Models Instead” (2019): Nature Machine Intelligence. Retrieved from: <a class="reference external" href="https://arxiv.org/abs/1811.10154">https://arxiv.org/abs/1811.10154</a> <br></p>
-<p>Ai, C., &amp; Norton, E. C. (2004). Computing interaction effects and standard errors in logit and Probit models. Retrieved January 15, 2023, from <a class="reference external" href="https://hhstokes.people.uic.edu/ftp/e535/probit/NortonWangAi.pdf">https://hhstokes.people.uic.edu/ftp/e535/probit/NortonWangAi.pdf</a>.</p>
-<p>Oh, S. (2019). Feature Interaction in Terms of Prediction Performance. Applied Sciences, 9(23), 5191. <a class="reference external" href="https://doi.org/10.3390/app9235191">https://doi.org/10.3390/app9235191</a></p>
-<p>Friedman, Jerome H. (2001): Greedy function approximation: A gradient boosting machine… Ann. Statist. 29 (5) 1189 - 1232. Retrieved January 15, 2023, from <a class="reference external" href="https://doi.org/10.1214/aos/1013203451/">https://doi.org/10.1214/aos/1013203451/</a></p>
-<p>Molnar, Christoph (2022): Interpretable Machine Learning: A Guide for Making Black Box Models Explainable. Retrieved January 12, 2023, from  <a class="reference external" href="https://christophm.github.io/interpretable-ml-book/feature-importance.html">https://christophm.github.io/interpretable-ml-book/feature-importance.html</a></p>
-<p>Lundberg, S. (2020, December 18). Welcome to the SHAP documentation Retrieved from <a class="reference external" href="https://github.com/slundberg/shap/blob/master/docs/index.rst">https://github.com/slundberg/shap/blob/master/docs/index.rst</a></p>
-</section>
 </section>
 </section>
 

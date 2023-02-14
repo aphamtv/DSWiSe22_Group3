@@ -5,8 +5,6 @@
 
 # In this exploratory data analysis, we will examine the structure and characteristics of the dataset, including its size, distribution of variables, and any missing or abnormal values. We will also create visualizations to help identify patterns and relationships between variables. The insights gained from this analysis will be used to guide the development of hypotheses and the choice of statistical models for our subsequent analysis.
 
-# ## Data Preparation
-
 # In[1]:
 
 
@@ -16,40 +14,21 @@ get_ipython().run_line_magic('run', 'functions.py')
 # In[2]:
 
 
-# set global random seed
-rand = 3
-os.environ['PYTHONHASHSEED']=str(rand)
-np.random.seed(rand)
+raw_data = load_raw_data()
+raw_data.shape
 
-
-# We use the `Compas-scores-two-years` dataset published by ProPublica and apply the same data filter used by them to create a new dataframe compas_df. The dataset contains information on defendants charged with a crime and assessed using the COMPAS risk assessment tool. The data includes demographic information, criminal history, and the results of the COMPAS assessment, including a predicted risk score and likelihood of recidivism over a two-year period. The filter selects only the rows from the data where the number of days between the arrest and the screening is within the range of -30 to 30, the value in the is_recid column is not -1, the value in the c_charge_degree column is not "O", and the value in the score_text column is not "N/A".
 
 # In[3]:
 
 
-dataURL = 'https://raw.githubusercontent.com/propublica/compas-analysis/master/compas-scores-two-years.csv'
-raw_data = pd.read_csv(dataURL)
 raw_data.columns
-
-
-# In[4]:
-
-
-compas_df = raw_data.loc[
-    (raw_data['days_b_screening_arrest'] <= 30) &
-    (raw_data['days_b_screening_arrest'] >= -30) &
-    (raw_data['is_recid'] != -1) &
-    (raw_data['c_charge_degree'] != "O") &
-    (raw_data['score_text'] != "N/A")
-]
-compas_df.shape
 
 
 # ### Race Variables
 
 # Initially, we assess the distribution of Race Variables 
 
-# In[5]:
+# In[4]:
 
 
 compas_df['race'].value_counts().plot(
@@ -60,7 +39,7 @@ compas_df['race'].value_counts().plot(
 
 # It can be clearly seen from the graph that the sample is unbalanced with regards to the race feature, where the sample data of COMPAS have extremely small representation of Asian and Native American. According to the US Census data, Asians make up about 5.23% of the nation’s overall population in 2014; in the ProPublica, however, they accounts for only 0.5% of the data.
 
-# In[6]:
+# In[7]:
 
 
 value_counts = compas_df['race'].value_counts()
@@ -76,7 +55,7 @@ print(table)
 
 # That there is a significant imbalance in the distribution of males and females in the sample population, with males accounting for approximately 81% of the sample and females accounting for approximately 19%. 
 
-# In[7]:
+# In[10]:
 
 
 compas_df['sex'].value_counts().plot(
@@ -85,7 +64,7 @@ compas_df['sex'].value_counts().plot(
     color = "#f17775")
 
 
-# In[8]:
+# In[11]:
 
 
 value_counts = compas_df['sex'].value_counts()
@@ -97,7 +76,7 @@ print("Sex Distribution of Defendants")
 print(table)
 
 
-# In[9]:
+# In[46]:
 
 
 df['two_year_recid'].value_counts()
@@ -297,26 +276,3 @@ plt.show()
 
 
 # Histogram shows that most of the defendants in the COMPAS data are between the ages of 25 and 35, with a concentration of ages towards the younger end of this range. This type of distribution can indicate that the population of defendants in the COMPAS data is relatively young, with fewer older defendants. 
-
-# Markus Waser, “Nonlinear Dependencies in and between Time Series” retrieved from: https://publik.tuwien.ac.at/files/PubDat_189752.pdf<br>
-# 
-# Patrick Hall, “Predictive modeling: Striking a balance between accuracy and interpretability”. Retrieved from: https://www.oreilly.com/content/predictive-modeling-striking-a-balance-between-accuracy-and-interpretability/<br>
-# 
-# Chunrong Ai and Edward C. Norton, “Computing interaction effects and standard errors in logit and Probit models” retrieved from: https://hhstokes.people.uic.edu/ftp/e535/probit/NortonWangAi.pdf<br>
-# 
-# Jerome H. Friedman, "Greedy function approximation: A gradient boosting machine.." Ann. Statist. 29 (5) 1189 - 1232, October 2001. Retrieved from: https://doi.org/10.1214/aos/1013203451<br>
-# 
-# Molnar, Christoph. “Interpretable Machine Learning: A Guide for Making Black Box Models Explainable” (2022): Chapter: Permutation Feature Importance
-# Slundberg/shap · GitHub<br>
-# 
-# Rudin, Cynthia. “Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and use Interpretable Models Instead” (2019): Nature Machine Intelligence. Retrieved from: https://arxiv.org/abs/1811.10154 <br>
-# 
-# Ai, C., & Norton, E. C. (2004). Computing interaction effects and standard errors in logit and Probit models. Retrieved January 15, 2023, from https://hhstokes.people.uic.edu/ftp/e535/probit/NortonWangAi.pdf.
-# 
-# Oh, S. (2019). Feature Interaction in Terms of Prediction Performance. Applied Sciences, 9(23), 5191. https://doi.org/10.3390/app9235191
-# 
-# Friedman, Jerome H. (2001): Greedy function approximation: A gradient boosting machine… Ann. Statist. 29 (5) 1189 - 1232. Retrieved January 15, 2023, from https://doi.org/10.1214/aos/1013203451/
-# 
-# Molnar, Christoph (2022): Interpretable Machine Learning: A Guide for Making Black Box Models Explainable. Retrieved January 12, 2023, from  https://christophm.github.io/interpretable-ml-book/feature-importance.html
-# 
-# Lundberg, S. (2020, December 18). Welcome to the SHAP documentation Retrieved from https://github.com/slundberg/shap/blob/master/docs/index.rst

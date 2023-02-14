@@ -10,12 +10,9 @@ root: intro
 # format: jb-book
 # root: index
 parts:
-  - caption: COMPAS Background
-    chapters:
-    - file: compas
-    # - file: critisms
   - caption: Analysis of COMPAS fairness
     chapters:
+    - file: compas
     - file: eda
     - file: reproduction
   - caption: Recidivism Models & Fairness
