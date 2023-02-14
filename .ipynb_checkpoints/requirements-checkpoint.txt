@@ -9,4 +9,4 @@ xgboost
 warnings
 os
 dalex
-plotly
+plotly==5.13.0
