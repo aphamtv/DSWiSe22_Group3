@@ -25,7 +25,7 @@ df_black.shape
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn [20], line 2[0m
+Cell [0;32mIn [19], line 2[0m
 [1;32m      1[0m [38;5;66;03m# Create Datafram with only african-americans[39;00m
 [0;32m----> 2[0m raw_data [38;5;241m=[39m load_raw_df()
 [1;32m      3[0m df_black [38;5;241m=[39m raw_data[38;5;241m.[39mloc[raw_data[[38;5;124m'[39m[38;5;124mrace[39m[38;5;124m'[39m][38;5;241m.[39misin([[38;5;124m"[39m[38;5;124mAfrican-American[39m[38;5;124m"[39m])]

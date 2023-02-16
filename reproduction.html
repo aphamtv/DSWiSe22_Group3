@@ -357,11 +357,6 @@ title="Print to PDF"
      Most predictive factors in logistic model (with controlling for other factors) for score
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Most predictive factors in logistic model (with controlling for other factors) for score
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -417,11 +412,6 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#most-predictive-factors-in-logistic-model-with-controlling-for-other-factors-for-score">
-     Most predictive factors in logistic model (with controlling for other factors) for score
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
      Most predictive factors in logistic model (with controlling for other factors) for score
     </a>
    </li>
@@ -578,30 +568,6 @@ title="Print to PDF"
 <h3>Most predictive factors in logistic model (with controlling for other factors) for score<a class="headerlink" href="#most-predictive-factors-in-logistic-model-with-controlling-for-other-factors-for-score" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">df_binary</span><span class="p">,</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;is_recid&#39;</span><span class="p">,</span>
-    <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;race&#39;</span><span class="p">,</span>
-    <span class="n">palette</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#ffab40&quot;</span><span class="p">,</span><span class="s2">&quot;#016d8c&quot;</span><span class="p">]</span>
-<span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribution of recidivism by Race&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Recidivism&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Count&#39;)
-</pre></div>
-</div>
-<img alt="_images/reproduction_16_1.png" src="_images/reproduction_16_1.png" />
-</div>
-</div>
-</section>
-<section id="id1">
-<h3>Most predictive factors in logistic model (with controlling for other factors) for score<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># As in the ProPublica article the score text &quot;medium&quot; and &quot;high&quot; are labeled &quot;high&quot;, the score text &quot;low&quot; stays the same in order to have binary score texts</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;score_text_binary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;score_text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="s1">&#39;Medium&#39;</span><span class="p">],</span> <span class="s1">&#39;High&#39;</span><span class="p">)</span>
 </pre></div>
@@ -639,8 +605,8 @@ title="Print to PDF"
 Dep. Variable:      score_text_binary   No. Observations:                 6172
 Model:                          Logit   Df Residuals:                     6160
 Method:                           MLE   Df Model:                           11
-Date:                Tue, 14 Feb 2023   Pseudo R-squ.:                  0.2729
-Time:                        22:42:03   Log-Likelihood:                -3084.2
+Date:                Thu, 16 Feb 2023   Pseudo R-squ.:                  0.2729
+Time:                        22:57:17   Log-Likelihood:                -3084.2
 converged:                       True   LL-Null:                       -4241.7
 Covariance Type:            nonrobust   LLR p-value:                     0.000
 =================================================================================================================================
@@ -710,7 +676,7 @@ two_year_recid                                                    0.6859      0.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Count&#39;)
 </pre></div>
 </div>
-<img alt="_images/reproduction_27_1.png" src="_images/reproduction_27_1.png" />
+<img alt="_images/reproduction_25_1.png" src="_images/reproduction_25_1.png" />
 </div>
 </div>
 <p>On this plot we can see the different base rates for recidivisim in African-American and Caucasian groups. Black people recidivate at a higher rate than white people. This, as Northpointe explains, will affect the FPR.</p>
@@ -774,7 +740,7 @@ two_year_recid                                                    0.6859      0.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/reproduction_36_0.png" src="_images/reproduction_36_0.png" />
+<img alt="_images/reproduction_34_0.png" src="_images/reproduction_34_0.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The total AUC is  0.7419049137350764
 </pre></div>
 </div>
@@ -812,7 +778,7 @@ two_year_recid                                                    0.6859      0.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Create Datafram with only african-americans</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">raw_data</span> <span class="o">=</span> <span class="n">load_raw_df</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df_black</span> <span class="o">=</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">raw_data</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;African-American&quot;</span><span class="p">])]</span>
@@ -856,7 +822,7 @@ two_year_recid                                                    0.6859      0.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x166d85100&gt;
 </pre></div>
 </div>
-<img alt="_images/reproduction_43_1.png" src="_images/reproduction_43_1.png" />
+<img alt="_images/reproduction_41_1.png" src="_images/reproduction_41_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -932,7 +898,7 @@ two_year_recid                                                    0.6859      0.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/reproduction_47_0.png" src="_images/reproduction_47_0.png" />
+<img alt="_images/reproduction_45_0.png" src="_images/reproduction_45_0.png" />
 </div>
 </div>
 <p>Finally, on their article they show the previous chart to visualize two things:</p>

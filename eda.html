@@ -358,13 +358,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#decile-scores">
-   Decile Scores
+  <a class="reference internal nav-link" href="#priors-count-variable">
+   Priors_Count Variable
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#priors-count-variable">
-   Priors_Count Variable
+  <a class="reference internal nav-link" href="#decile-scores">
+   Decile Scores
   </a>
  </li>
 </ul>
@@ -402,13 +402,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#decile-scores">
-   Decile Scores
+  <a class="reference internal nav-link" href="#priors-count-variable">
+   Priors_Count Variable
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#priors-count-variable">
-   Priors_Count Variable
+  <a class="reference internal nav-link" href="#decile-scores">
+   Decile Scores
   </a>
  </li>
 </ul>
@@ -496,7 +496,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>It can be clearly seen from the graph that the sample is unbalanced with regards to the race feature, where the sample data of COMPAS have extremely small representation of Asian and Native American. According to the US Census data, Asians make up about 5.23% of the nation’s overall population in 2014; in the ProPublica, however, they accounts for only 0.5% of the data.</p>
+<p>It can be clearly seen from the graph that the sample is unbalanced with regards to the race feature, where the sample data of COMPAS have extremely small representation of Asian and Native American. According to the US Census data, Asians make up about 5.23% of the nation’s overall population in 2014; in the ProPublica, however, they accounts for only 0.5% of the data.  Caucasians and African-Americans represent the biggest race groups in the dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value_counts</span> <span class="o">=</span> <span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -525,7 +525,7 @@ Native American             11       0.178
 </section>
 <section id="sex-variables">
 <h2>Sex Variables<a class="headerlink" href="#sex-variables" title="Permalink to this headline">#</a></h2>
-<p>That there is a significant imbalance in the distribution of males and females in the sample population, with males accounting for approximately 81% of the sample and females accounting for approximately 19%.</p>
+<p>Looking at the sex variable, it shows that there is a significant imbalance in the distribution of males and females in the sample population, with males accounting for approximately 81% of the sample and females accounting for approximately 19%.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
@@ -563,24 +563,10 @@ Female          1175      19.038
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;two_year_recid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    3363
-1    2809
-Name: two_year_recid, dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="age-variable">
 <h2>Age Variable<a class="headerlink" href="#age-variable" title="Permalink to this headline">#</a></h2>
-<p>Histogram shows that most of the defendants in the COMPAS data are between the ages of 25 and 35, with a concentration of ages towards the younger end of this range. This type of distribution can indicate that the population of defendants in the COMPAS data is relatively young, with fewer older defendants.</p>
+<p>The histogram shows that most of the defendants in the COMPAS data are between the ages of 25 and 35, with a concentration of ages towards the younger end of this range. This type of distribution can indicate that the population of defendants in the COMPAS data is relatively young, with fewer older defendants.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#ffab40&#39;</span><span class="p">)</span>
@@ -592,25 +578,11 @@ Name: two_year_recid, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/eda_17_0.png" src="_images/eda_17_0.png" />
+<img alt="_images/eda_16_0.png" src="_images/eda_16_0.png" />
 </div>
 </div>
-<p>Given that African American and Caucasian groups are the predominant populations in our dataset, we will analyze age distributions within these two populations to gain a deeper understanding of their demographic structures.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to customize the histogram color</span>
-<span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="k">as</span> <span class="nn">cm</span>
-<span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">colors</span>
-
-<span class="k">def</span> <span class="nf">hist_color</span><span class="p">(</span><span class="n">color_code_start</span><span class="p">,</span> <span class="n">color_code_end</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="n">cmap</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">LinearSegmentedColormap</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="s2">&quot;MyColorMap&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">color_code_start</span><span class="p">,</span> <span class="n">color_code_end</span><span class="p">],</span> <span class="n">N</span> <span class="o">=</span> <span class="n">n</span><span class="p">)</span>
-    <span class="n">colors_array</span> <span class="o">=</span> <span class="n">cmap</span><span class="p">(</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">()(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
-    <span class="n">color_codes</span> <span class="o">=</span> <span class="p">[</span><span class="n">colors</span><span class="o">.</span><span class="n">to_hex</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">colors_array</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">color_codes</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Given that African American and Caucasian groups are the predominant populations in our dataset, and ProPublica, Northpoint and the Washington Post also do concentrate on these two groups, we will analyze age distributions within these two populations to gain a deeper understanding of their demographic structures.</p>
+<p>The distribution below shows that African-Americans defendants tend to be younger than Caucasians defendants.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">min_age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
@@ -631,7 +603,71 @@ Name: two_year_recid, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Age Distribution by Race&#39;}, xlabel=&#39;race&#39;, ylabel=&#39;Number of Defendants&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/eda_20_1.png" src="_images/eda_20_1.png" />
+<img alt="_images/eda_18_1.png" src="_images/eda_18_1.png" />
+</div>
+</div>
+</section>
+<section id="priors-count-variable">
+<h2>Priors_Count Variable<a class="headerlink" href="#priors-count-variable" title="Permalink to this headline">#</a></h2>
+<p>From the distribution of the priors count variable, we see that the dataset tends to have few priors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;priors_count&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#016d8c&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Priors Distribution&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Priors&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/eda_21_0.png" src="_images/eda_21_0.png" />
+</div>
+</div>
+<p>As done before for the age variable, we here also look at the age feature for African-Americans and Caucasians in a direct comparison. It shows that African-Americans are</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">min_priors</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;priors_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="n">max_priors</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;priors_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">count_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">min_priors</span><span class="p">,</span> <span class="n">max_priors</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">compas_df</span><span class="p">[</span><span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;African-American&quot;</span><span class="p">,</span><span class="s2">&quot;Caucasian&quot;</span><span class="p">])]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;race&#39;</span><span class="p">)[</span><span class="s1">&#39;priors_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">count_bins</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span> <span class="o">=</span> <span class="kc">False</span><span class="p">))</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> 
+    <span class="n">color</span> <span class="o">=</span> <span class="n">hist_color</span><span class="p">(</span><span class="s1">&#39;#e3e9ed&#39;</span><span class="p">,</span> <span class="s1">&#39;#016d8c&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;&quot;Priors Count&quot; Distribution by Race&#39;</span><span class="p">,</span> 
+    <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Number of Defendants&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;&quot;Priors Count&quot; Distribution by Race&#39;}, xlabel=&#39;race&#39;, ylabel=&#39;Number of Defendants&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/eda_23_1.png" src="_images/eda_23_1.png" />
+</div>
+</div>
+<p><strong><strong>Correlation between Features</strong></strong></p>
+<p>This heatmap shows a positive correlations for the decile score with two year recidivism. Meaning that the assigned decile score by COMPAS does indeed represent a tendency of defendants with high scores to be recidivating.</p>
+<p>This heatmap also shows a positive correlations for the decile score with  priors and  a negativ correlation with age. This means that overall the more crimes the defendant has commited before, the higher his / her score and that overall younger defendant have  higher scores.
+This is not surprising as both are also correlated with two year recidivism.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mcolors</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#fdf2f2&#39;</span><span class="p">,</span> <span class="s1">&#39;#f17775&#39;</span><span class="p">]</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">mcolors</span><span class="o">.</span><span class="n">LinearSegmentedColormap</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">compas_df</span><span class="p">[[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;race&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="s1">&#39;decile_score&#39;</span><span class="p">,</span> <span class="s1">&#39;priors_count&#39;</span><span class="p">,</span> <span class="s1">&#39;two_year_recid&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Heatmap of Correlation between Features&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/eda_26_0.png" src="_images/eda_26_0.png" />
 </div>
 </div>
 </section>
@@ -657,153 +693,11 @@ Name: two_year_recid, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Score Text by Race&#39;}, xlabel=&#39;Race&#39;, ylabel=&#39;Score Text&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/eda_23_1.png" src="_images/eda_23_1.png" />
+<img alt="_images/eda_29_1.png" src="_images/eda_29_1.png" />
 </div>
 </div>
-<p>African American defendants have the highest number of individuals classified with high scores. However, it is important to consider that African Americans make up the largest racial group in this dataset, representing 51.442% of the total. To better understand the distribution of decile scores among different racial groups, we plotted the histogram as below. The chart eveals a noticeable pattern. As the decile score increases, the proportion of defendants from both the Caucasian and ‘Other’ racial groups decreases. However, this trend is not observed in the African American group, where the proportion of defendants remains relatively stable across different decile scores.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compas_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;race&#39;</span><span class="p">)[</span><span class="s1">&#39;decile_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> 
-    <span class="n">color</span> <span class="o">=</span> <span class="n">hist_color</span><span class="p">(</span><span class="s1">&#39;#e3e9ed&#39;</span><span class="p">,</span> <span class="s1">&#39;#016d8c&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span>
-    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Decile Score Histogram by Race&#39;</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Decile Score Histogram by Race&#39;}, xlabel=&#39;race&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/eda_25_1.png" src="_images/eda_25_1.png" />
-</div>
-</div>
-</section>
-<section id="priors-count-variable">
-<h2>Priors_Count Variable<a class="headerlink" href="#priors-count-variable" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;priors_count&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#016d8c&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Priors Distribution&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Priors&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/eda_27_0.png" src="_images/eda_27_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">min_priors</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;priors_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
-<span class="n">max_priors</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;priors_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="n">count_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">min_priors</span><span class="p">,</span> <span class="n">max_priors</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="n">compas_df</span><span class="p">[</span><span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;African-American&quot;</span><span class="p">,</span><span class="s2">&quot;Caucasian&quot;</span><span class="p">])]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;race&#39;</span><span class="p">)[</span><span class="s1">&#39;priors_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">count_bins</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span> <span class="o">=</span> <span class="kc">False</span><span class="p">))</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> 
-    <span class="n">color</span> <span class="o">=</span> <span class="n">hist_color</span><span class="p">(</span><span class="s1">&#39;#e3e9ed&#39;</span><span class="p">,</span> <span class="s1">&#39;#016d8c&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span>
-    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
-    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;&quot;Priors Count&quot; Distribution by Race&#39;</span><span class="p">,</span> 
-    <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Number of Defendants&#39;</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;&quot;Priors Count&quot; Distribution by Race&#39;}, xlabel=&#39;race&#39;, ylabel=&#39;Number of Defendants&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/eda_28_1.png" src="_images/eda_28_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mcolors</span>
-
-<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#fdf2f2&#39;</span><span class="p">,</span> <span class="s1">&#39;#f17775&#39;</span><span class="p">]</span>
-<span class="n">cmap</span> <span class="o">=</span> <span class="n">mcolors</span><span class="o">.</span><span class="n">LinearSegmentedColormap</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">colors</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">compas_df</span><span class="p">[[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;race&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="s1">&#39;decile_score&#39;</span><span class="p">,</span> <span class="s1">&#39;priors_count&#39;</span><span class="p">,</span> <span class="s1">&#39;two_year_recid&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Heatmap of Correlation between Features&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/eda_29_0.png" src="_images/eda_29_0.png" />
-</div>
-</div>
-<p>In this exploratory data analysis, we will examine the structure and characteristics of the dataset, including its size, distribution of variables, and any missing or abnormal values. We will also create visualizations to help identify patterns and relationships between variables. The insights gained from this analysis will be used to guide the development of hypotheses and the choice of statistical models for our subsequent analysis.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Defendants by Race Distribution&quot;</span><span class="p">,</span>
-    <span class="n">kind</span><span class="o">=</span> <span class="s2">&quot;barh&quot;</span><span class="p">,</span> 
-    <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#ffab40&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Defendants by Race Distribution&#39;}&gt;
-</pre></div>
-</div>
-<img alt="_images/eda_31_1.png" src="_images/eda_31_1.png" />
-</div>
-</div>
-<p>It can be clearly seen from the graph that the sample is unbalanced with regards to the race feature, where the sample data of COMPAS have extremely small representation of Asian and Native American. According to the US Census data, Asians make up about 5.23% of the nation’s overall population in 2014; in the ProPublica, however, they accounts for only 0.5% of the data.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value_counts</span> <span class="o">=</span> <span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;race&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="n">percentage</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">value_counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">compas_df</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="n">table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">value_counts</span><span class="p">,</span> <span class="n">percentage</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">table</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Value Counts&#39;</span><span class="p">,</span> <span class="s1">&#39;Percentage&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Race Distribution of Defendants&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Race Distribution of Defendants
-                  Value Counts  Percentage
-African-American          3175      51.442
-Caucasian                 2103      34.073
-Hispanic                   509       8.247
-Other                      343       5.557
-Asian                       31       0.502
-Native American             11       0.178
-</pre></div>
-</div>
-</div>
-</div>
-<p>Next, we examine the distribution of COMPAS decile scores across different racial groups in relation to recidivism.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_text_by_race</span> <span class="o">=</span> <span class="n">compas_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;race&#39;</span><span class="p">,</span><span class="s1">&#39;score_text&#39;</span><span class="p">],</span> <span class="n">sort</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
-<span class="n">score_text_by_race</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;race&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;barh&quot;</span><span class="p">,</span> 
-    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Score Text by Race&quot;</span><span class="p">,</span>
-    <span class="n">ylabel</span> <span class="o">=</span> <span class="s2">&quot;Score Text&quot;</span><span class="p">,</span>
-    <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;Race&quot;</span><span class="p">,</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#f17775&quot;</span><span class="p">,</span> <span class="s2">&quot;#016d8c&quot;</span><span class="p">,</span> <span class="s2">&quot;#ffab40&quot;</span><span class="p">],</span>
-    <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
-    <span class="n">stacked</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Score Text by Race&#39;}, xlabel=&#39;Race&#39;, ylabel=&#39;Score Text&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/eda_35_1.png" src="_images/eda_35_1.png" />
-</div>
-</div>
-<p>African American defendants have the highest number of individuals classified with high scores. However, it is important to consider that African Americans make up the largest racial group in this dataset, representing 51.442% of the total.</p>
+<p>African American defendants have the highest number of defendants classified with high scores. However, it is important to consider that African Americans make up the largest racial group in this dataset, representing 51.442% of the total.</p>
+<p>To better understand the distribution of decile scores among different racial groups, we plotted the histogram as below. The chart reveals a noticeable pattern. As the decile score increases, the proportion of defendants from both the Caucasian, Hispanics, Asians and ‘Other’ racial groups decreases. However, this trend is not observed in the African American and the Native American groups, where the proportion of defendants remains relatively stable across different decile scores.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="k">as</span> <span class="nn">cm</span>
@@ -827,24 +721,9 @@ Native American             11       0.178
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Decile Score Histogram by Race&#39;}, xlabel=&#39;race&#39;, ylabel=&#39;% with Decile Score&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/eda_37_1.png" src="_images/eda_37_1.png" />
+<img alt="_images/eda_31_1.png" src="_images/eda_31_1.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">compas_df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#ffab40&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Age Distribution&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Age&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/eda_38_0.png" src="_images/eda_38_0.png" />
-</div>
-</div>
-<p>Histogram shows that most of the defendants in the COMPAS data are between the ages of 25 and 35, with a concentration of ages towards the younger end of this range. This type of distribution can indicate that the population of defendants in the COMPAS data is relatively young, with fewer older defendants.</p>
 </section>
 </section>
 
